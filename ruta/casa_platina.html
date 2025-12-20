@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Detalle de Parada</title>
+    <!-- Estilos Bootstrap y Leaflet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+<style>
+body {
+    font-family: 'Lato', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', serif;
+}
+</style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+        <div class="container-fluid text-white">
+            <span class="navbar-brand">Paseo Didáctico</span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegación">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="../index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="../ruta.html">La Ruta</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="/ruta/kahoot.html">Actividades</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="mailto:pedro.detena.romero@alumnos.upm.es" target="_blank">Contacto</a>
+                </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<div class="container-fluid py-5">
+<h1 class="mb-4 px-5">Casa de la Platina</h1>
+
+<div class="container-fluid px-5">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a class="nav-link text-secondary" href="casa.html">Mapa</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Cada de la Platina</li>
+        </ol>
+    </nav>
+        <p>
+            El Platino era conocido en Colombia y Ecuador, sin embargo, la primera persona en traer dicho metal a Europa y describirlo fue Antonio de Ulloa en 1748, 
+            como se ha mencionado en paradas anteriores.
+        </p>
+        <p>
+            Dado que los únicos yacimientos conocidos de este metal se encontraban bajo dominio español en sus colonias americanas, España en el siglo XVIII monopolizó 
+            la demanda europea de platina. A medida que el interés de los demás países fue aumentando su demanda se disparó, y la Secretaría de Indias, por deseo de la 
+            Corona, solicitó al Seminario Patriótico de Vergara investigar un método de purificación de la platina. 
+        </p>
+        <p>
+            Esta tarea recayó sobre el químico François Chavaneau, quién en 1786 consiguió purificar y aislar este metal. A partir de este descubrimiento, la Secretaría 
+            de Indias decidió fundar en la ciudad de Madrid una Cátedra de Mineralogía y un laboratorio destinado a la sinterización de la platina, poniendo a Chavaneau 
+            al mando de ambas instituciones. 
+        </p>
+        <p>
+            En este laboratorio, que pasó a conocerse como la Casa de la Platina, se recibía platina sin procesar procedente de los yacimientos de Sudamérica, para ser purificada 
+            y suplir tanto la demanda nacional como la extranjera.  
+        </p>
+</div>
+
+<div class="row px-5 py-2">
+    <h2 class="mb-4">Historia de la casa </h2>
+    <div class="col-lg-8 ">
+        <p>
+            El Laboratorio del Platino y la Escuela de Mineralogía de Indias se establecieron en un edificio de la madrileña calle de Hortaleza, concretamente en los números 3 y 4 de la manzana 
+            330 de la Planimetría General de Madrid. Actualmente esta ubicación se corresponde con  el Palacio de Santa Bárbara situado en la calle Hortaleza número 87, como se muestra señalado 
+            en la Fig. 1.
+        </p>
+        <p>
+            El inmueble se adquirió con un precio de 147.000 reales y 2 maravedíes el 6 de diciembre de 1787. La remodelación del edificio se encomendó al arquitecto Juan de Villanueva, 
+            que estimó el coste de las obras en 133.440 reales y 30 maravedíes. De acuerdo a las fechas en que el arquitecto recibió los pagos, los trabajos debieron de realizarse durante 1788. 
+        </p>
+        <p>
+            Los proceso de purificación de la platina comenzarían durante la primera mitad de 1788, ya que el 25 de mayo de ese año se encargó al orfebre Francisco Alonso un cáliz, una patena, 
+            una cucharita y una caja de platino por 10.220 reales. Posteriormente, el monarca  Carlos III encargaría a este artesano un juego de objetos identicos para regalar al Papa Pío IV, 
+            alcanzando en esta ocasión el precio de los trabajos 15.000 reales. 
+        </p>
+        <p>
+            La existencia de la Real Fábrica de la Platina fue bastante corta, ya que transcurridos aproximadamente 2 años, sus actividades fueron transladadas al laboratorio de la calle del Turco.
+        </p>
+    </div>
+
+    <div class="col-lg-4 d-flex justify-content-center">
+    <div class="d-flex justify-content-center align-items-start gap-3 flex-wrap">
+        <figure class="figure text-center m-0">
+        <img src="../assets/parada6/casa_platina.jpg" class="img-fluid" style="max-width:220px; " alt="Ricardo Velázquez Bosco">
+        <figcaption class="figure-caption text-muted">Fig. 1. Mapa de la ubicación de La Platina</figcaption>
+        </figure>
+    </div>
+
+    </div>
+
+</div>
+
+<div class="row px-5 py-3">
+    <h3 class="mb-4">Timeline cronológico</h3>
+        <p>
+            El edificio posteriormente tuvo diversas utilidades como se muestra en la línea de tiempo inferior.
+        </p>
+        <ul class="ps-5 ms-0">
+            <li>
+                Fábrica de cervezas Santa Bárbara: De acuerdo con lo publicado en la página de cervezas Santa Bárbara: “El 17 de Octubre de 1815, el Conde de Moctezuma de Tula y de Tultengo 
+                otorgó licencia para establecer la fábrica de cerveza Santa Bárbara en la calle Hortaleza nº 2”. Esto lo corrobora la obra Paseo por Madrid, o guía de forasteros en la corte, 
+                publicado en 1815, en ella se registra la existencia de la fábrica de cerveza ubicada en la Casa de la Platina.
+                
+            </li>
+            <div class="d-flex justify-content-center align-items-start gap-3 flex-wrap py-3">
+                <!-- <figure class="figure text-center m-0">
+                <img src="../assets/parada6/fabrica_cerveza.jpg" class="img-fluid" style="max-width:220px; " alt="Ricardo Velázquez Bosco">
+                <figcaption class="figure-caption text-muted">Fig. 2. Fábrica de cervezas Santa Bárbara en 1815</figcaption>
+                </figure> -->
+                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalFig2">Figura 2</button>
+            </div>
+            <li class="py-2">
+                Establecimiento Litográfico del Depósito Hidrográfico: El Depósito Hidrográfico era una instutición dedicada al estudio y gestión de ámbitos relacionados con la hidrografía. Entre 
+                sus actividades destacaban el desarrollo del Atlas marítimo del reino y servicio de biblioteca, catálogo y almacén de cartas naúticas. Esta institución estableció en el edificio su primer 
+                taller litográfico en 1819, permaneciendo allí 
+            </li>
+            <li class="py-2">
+                Palacio de Santa Bárbara: Finalmente en 1862, se demolió la manzana por completo con el fin de edificar el Palacio del Conde de la Unión de Cuba, el cual se 
+                conoce en la actualidad como el Palacio de Santa Bárbara. 
+            </li>
+        
+            <div class="d-flex justify-content-center align-items-start gap-3 flex-wrap py-3">
+            <!-- <figure class="figure text-center m-0">
+            <img src="../assets/parada6/palacio_st_barbara_actual.jpg" class="img-fluid" style="max-width:220px; " alt="Ricardo Velázquez Bosco">
+            <figcaption class="figure-caption text-muted">Fig. 3. ubicación actual Palacio de Santa Bárbara</figcaption>
+            </figure> -->
+                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalFig3">Figura 3</button>
+            </div>
+        </ul>
+
+
+    <svg class="py-5" viewBox="0 0 1200 150" width="100%" height="auto" role="img" aria-labelledby="tl-title tl-desc" preserveAspectRatio="xMidYMid meet">
+    <title id="tl-title">Timeline de la Casa de la Platina</title>
+    <desc id="tl-desc">1787–1791 Real Fábrica de Platina y Escuela; 1815 Fábrica de cerveza Santa Bárbara; 1819–1825 Establecimiento Litográfico del Depósito Hidrográfico; 1862 Inicio del Palacio de Santa Bárbara.</desc>
+
+    <!-- Estilos internos: tamaño más pequeño y bloqueados frente a CSS externo -->
+    <style>
+        .tl-date  { font: 700 clamp(12px,1.2vw,18px) 'Lato', sans-serif; fill:#212529; }
+        .tl-label { font: clamp(10px,1.05vw,13px) 'Lato', sans-serif; fill:#495057; }
+        .tl-line  { stroke:#cfd4da; stroke-width:3; }
+        .tl-dot   { fill:#0d6efd; }
+    </style>
+
+    <!-- Línea base con márgenes amplios para que nada se corte -->
+    <line class="tl-line" x1="140" y1="75" x2="1060" y2="75" />
+
+    <!-- Coordenadas de los hitos (distribución equiespaciada) -->
+    <!-- Hito 1 (alineación a la izquierda para evitar corte) -->
+    <circle class="tl-dot" cx="140" cy="75" r="6" />
+    <text class="tl-date"  x="140" y="28" text-anchor="start">1787–1791</text>
+    <text class="tl-label" text-anchor="start">
+        <tspan x="140" y="105">Real Fábrica de Platina</tspan>
+        <tspan x="140" y="122">y Escuela</tspan>
+    </text>
+
+    <!-- Hito 2 -->
+    <circle class="tl-dot" cx="480" cy="75" r="6" />
+    <text class="tl-date"  x="480" y="28" text-anchor="middle">1815</text>
+    <text class="tl-label" text-anchor="middle">
+        <tspan x="480" y="105">Fábrica de cerveza</tspan>
+        <tspan x="480" y="122">Santa Bárbara</tspan>
+    </text>
+
+    <!-- Hito 3 -->
+    <circle class="tl-dot" cx="820" cy="75" r="6" />
+    <text class="tl-date"  x="820" y="28" text-anchor="middle">1819–1825</text>
+    <text class="tl-label" text-anchor="middle">
+        <tspan x="820" y="105">Establecimiento Litográfico del</tspan>
+        <tspan x="820" y="122">Depósito Hidrográfico</tspan>
+    </text>
+
+    <!-- Hito 4 (alineación a la derecha para evitar corte) -->
+    <circle class="tl-dot" cx="1060" cy="75" r="6" />
+    <text class="tl-date"  x="1060" y="28" text-anchor="end">1862</text>
+    <text class="tl-label" text-anchor="end">
+        <tspan x="1060" y="105">Inicio del Palacio de</tspan>
+        <tspan x="1060" y="122">Santa Bárbara</tspan>
+    </text>
+    </svg>
+
+</div>
+
+<div class="row px-5 py-3">
+    <h2 class="mb-4">Traslado de ubicación</h2>
+    <p>
+        Como bien se menciona anteriormente en 1791 se produce el traslado de la Casa de la Platina a la calle del Turco (hoy c/ Marqués de Cubas, 15), donde desde 1789 
+        se encontraba el Laboratorio de Química Aplicada a las Artes de la Secretaría de Hacienda. Entonces la dirección del laboratorio cae a cargo de Chavaneau entre los años 1791-1797 y
+        Proust entre los años 1799-1806.
+    </p>
+    <p>
+        Actualmente esta ubicación corresponde a la Escuela de Artes Aplicadas y Oficios Artísticos (c/ del Marqués de Cubas 15).
+    </p>
+
+    <div class="d-flex justify-content-center align-items-start gap-5 py-5 flex-wrap">
+        <figure class="figure text-center m-0">
+        <img src="../assets/parada6/imagen antigua.jpg" class="img-fluid" style="max-width:500px; max-height: 210px;" alt="">
+        <figcaption class="figure-caption text-muted">Fig. 6. Imagen Ilustrativa de la localización antiguamente</figcaption>
+        </figure>
+
+        <figure class="figure text-center m-0">
+        <img src="../assets/parada6/imagen actual.jpg" class="img-fluid" style="max-width:500px; max-height: 210px;" alt="">
+        <figcaption class="figure-caption text-muted">Fig. 7. Imagen Ilustrativa de la localización actual</figcaption>
+        </figure>
+    </div>
+
+
+</div>
+
+<!--cambiar contenido por el propioooo-->
+<div>
+    <h2 class="mt-5 mb-3 px-5">Más información</h2>
+        <div class="accordion px-5" id="infoAccordion">
+            <!-- Sitios web -->
+            <div class="accordion-item">
+                <h3 class="accordion-header" id="headingSites">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSites">Sitios oficiales</button>
+                </h3>
+                <div id="collapseSites" class="accordion-collapse collapse show" data-bs-parent="#infoAccordion">
+                <div class="accordion-body">
+                    <ul class="list-unstyled">
+                        <li>🔗 <a href="https://www.igme.es/" target="_blank">Instituto Geológico y Minero</a></li>      
+                    </ul>
+                </div>
+            </div>
+            </div>
+            <!-- Vídeos -->
+            <div class="accordion-item">
+                <h3 class="accordion-header" id="headingVids">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseVids">
+                    Vídeos y tours virtuales
+                    </button>
+                </h3>
+                <div id="collapseVids" class="accordion-collapse collapse" data-bs-parent="#infoAccordion">
+                    <div class="accordion-body">
+                    <ul class="list-unstyled">
+                        <li>🎥 <a href="https://www.youtube.com/results?search_query=historia+del+platino+espa%C3%B1a" target="_blank">Historia del Platino en España</a></li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+<div class="text-center py-5">
+    <p>“La naturaleza ha depositado en las entrañas de la tierra tesoros que la razón y la ciencia han de descubrir para el beneficio de la humanidad”</p>
+    <footer class="blockquote-footer">Antonio de Ulloa</footer>
+    <div class="text-center py-2 mb-5"><a id="btn-back" href="#" class="btn btn-secondary">← Volver al mapa</a></div>
+</div>
+</div>
+</div>
+
+<!-- Modal Fig. 3 -->
+<div class="modal fade" id="modalFig2" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-md modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg">
+        <div class="modal-body p-0">
+            <div class="card border-0">
+            <img src="../assets/parada6/fabrica_cerveza.jpg"
+                class="card-img-top"
+                alt="Planos del Museo del Prado: planta, alzado y perfil"
+                loading="lazy">
+            <div class="card-body text-center">
+                <figcaption class="figure-caption text-muted">
+                Fig. 2. Escrito fábrica de cervezas Santa Bárbara en 1815
+                </figcaption>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalFig3" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-md modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg">
+        <div class="modal-body p-0">
+            <div class="card border-0">
+            <img src="../assets/parada6/palacio_st_barbara_actual.jpg" class="card-img-top" alt="Planos del Museo del Prado: planta, alzado y perfil" loading="lazy">
+            <div class="card-body text-center">
+                <figcaption class="figure-caption text-muted">
+                Fig. 3. Ubicación actual Palacio de Santa Bárbara
+                </figcaption>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+<footer class="bg-dark text-white py-3 text-center">
+    <p class="mb-0">© 2025 - Proyecto TFM Ingeniería Industrial | Universidad Politécnica de Madrid</p>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+(function () {
+    // Lee "from" SOLO de la URL. Si no viene, NO uses sessionStorage.
+    const params = new URLSearchParams(location.search);
+    let from = params.get('from');                 // 'gps' | 'home' | null
+
+    // Opcional: si no viene 'from', intenta inferir 'gps' solo si vienes de scan.html
+    if (!from) {
+        try {
+        const ref = document.referrer ? new URL(document.referrer) : null;
+        if (ref && ref.origin === location.origin && /\/scan\.html?$/.test(ref.pathname)) {
+            from = 'gps';
+        }
+        } catch {}
+    }
+
+    // Si AÚN no hay 'from', por defecto asume 'home'
+    if (!from) from = 'home';
+
+    // Guarda en sessionStorage SOLO si vino en la URL (para navegación interna dentro de la misma parada)
+    if (params.has('from')) {
+        sessionStorage.setItem('from_parada', from);
+    }
+
+    // Rutas de vuelta (ajusta a tu estructura real)
+    const BACK_GPS  = './gps.html';   // mapa con GPS
+    const BACK_HOME = './casa.html';      // mapa “desde casa” (o ../ruta.html)
+
+    function onBack(e) {
+        e.preventDefault();
+        if (from === 'gps') {
+        // Fuerza volver al mapa GPS (saltando scan.html)
+        window.location.assign(BACK_GPS);
+        } else {
+        // 'home' u otro → vuelve al mapa normal
+        window.location.assign(BACK_HOME);
+        }
+    }
+
+    document.getElementById('btn-back').addEventListener('click', onBack);
+})();
+</script>
+
+</body>
+</html>

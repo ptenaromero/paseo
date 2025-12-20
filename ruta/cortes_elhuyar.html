@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Detalle de Parada</title>
+    <!-- Estilos Bootstrap y Leaflet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+<style>
+body {
+    font-family: 'Lato', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', serif;
+}
+.img-thumb { 
+    cursor: zoom-in; 
+}
+#imageModalImg { 
+    max-height: 75vh; object-fit: contain; 
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark ">
+    <div class="container-fluid text-white">
+        <span class="navbar-brand">Paseo Didáctico</span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegación">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="../index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="../ruta.html">La Ruta</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="/ruta/kahoot.html">Actividades</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="mailto:pedro.detena.romero@alumnos.upm.es" target="_blank">Contacto</a>
+            </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<header class="position-relative d-flex align-items-center mb-4" style="min-height:320px; height:48vh; background:url('../assets/parada7/p_congreso.jpg') center/cover no-repeat;">
+    <!-- overlay -->
+    <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 z-0"></div>
+    <!-- contenido -->
+    <div class="container position-relative z-1 text-white">
+    <!-- <span class="badge bg-primary-subtle text-primary">Parada</span> -->
+    <h1 class="display-6 mt-2 mb-1">Palacio de las Cortes</h1>
+    <p class="lead-6 m-0">Tambíen llamado Congreso de los Diputados</p>
+    </div>
+</header>
+
+<div class="container-fluid py-3">
+<h1 class="mb-4 px-5">Palacio de las Cortes</h1>
+
+
+    <div class="container-fluid px-5">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a class="nav-link text-secondary" href="casa.html">Mapa</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Palacio de las cortes</li>
+        </ol>
+    </nav>
+    <p>El Palacio de las Cortes o Palacio del Congreso de los Diputados, actualmente es el edificio que alberga el Congreso de los Diputados, una de las dos Cámaras
+        de las Cortes Generales, El Parlamento Español. Se encuentra situado en la plaza de las Cortes de Madrid, entre la calle de Zorrilla y la Carrera de San Jerónimo, a escasa 
+        distancia del paseo del Prado.
+    </p>
+    </div>
+    
+
+    <div class="row px-5">
+        <div class="col-lg-8">
+        <p>
+            El edificio se construyó entre 1843 y 1850 según el proyecto del arquitecto Narciso Pascual y Colomer (nacido en Madrid en el año 1801 y fallecido en Lisboa en el año 1870;
+            además de numerosas obras en Madrid, llegó a ser director de la Escuela Superior de Arquitectura de esta ciudad) tras la demolición del Convento del Espíritu Santo que se muestra en
+            la Fig. 1.
+        </p>
+        <p>
+            El edificio toma especial relevancia en esta parada de la ruta debido a que, en el edificio vecino, el cuál se observa en unos de los laterales del Palacio de las Cortes mostrado en
+            la Fig. 2, Fausto de Elhuyar, vivió sus últimos años y falleció. En aquel momento era el palacio del duque de San Pedro, en la calle de Florín (una casa singular), hoy Fernanflor, que albergaba la Dirección General de Minas y la Escuela de Ingenieros de Minas, ambas instituciones dirigidas
+            por Elhuyar.
+        </p>
+        </div>
+
+        <div class="col-lg-2 d-flex justify-content-center">
+        <div class="d-flex justify-content-center align-items-start gap-3 flex-wrap">
+            <figure class="figure text-center m-0">
+            <img src="../assets/parada7/cortes.jpg" class="img-fluid img-thumb" style="max-width:240px; height: 170px;" alt="Ricardo Velázquez Bosco" data-bs-toggle="modal" data-bs-target="#imageModal">
+            <figcaption class="figure-caption text-muted">Fig. 1. Iglesia y Convento del Espíritu Santo</figcaption>
+            </figure>
+        </div>
+        </div>
+        <div class="col-lg-2 d-flex justify-content-center">
+        <div class="d-flex justify-content-center align-items-start gap-3 flex-wrap">
+            <figure class="figure text-center m-0">
+            <img src="../assets/parada7/carreradesanjeronimo.jpg" class="img-fluid img-thumb" style="max-width:240px; height: 170px; " alt="Ricardo Velázquez Bosco" data-bs-toggle="modal" data-bs-target="#imageModal">
+            <figcaption class="figure-caption text-muted">Fig. 2. Palacio de las Cortes en el año 1853</figcaption>
+            </figure>
+        </div>
+        </div>
+
+    </div>
+
+    <div class="row px-5">
+        <h2 class="mt-3 mb-4">Hermanos Elhuyar</h2>
+        <div class="col-lg-6">
+            <h3 class="mb-4">Fausto de Elhuyar</h3>
+                <p>
+                    Fausto de Elhuyar y Lubice nació en 1755 en Logroño y entre 1773 y 1777 estudió cirugía, matemáticas e historia natural en París. Durante los tres años siguientes continuó 
+                    su formación en otras instituciones europeas. Entre 1781 y 1785 fue catedrático de Mineralogía y Metalurgia en el Real Seminario de Vergara (Laboratorium Chemicum), donde 
+                    coincidió con Chavaneau y colaboraron en la purificación del platino. Allí, en 1783, obtuvo wolframio junto con su hermano Juan José. Entre 1784 y 1785 tuvo estancias 
+                    en lugares como Freiberg, Suecia o Viena, posteriormente siendo destinado a México, donde llegó a ser director general de Minería del Virreinato de la Nueva España y fundó 
+                    el Colegio de Minería (1792) y el Palacio de Minería (1813). Regresaría a España en 1821 y fallecería en 1833.
+                </p>
+                <div class="d-flex justify-content-center align-items-start gap-3 flex-wrap">
+                <figure class="figure text-center m-0">
+                <img src="../assets/parada7/fausto_elhuyar.jpg" class="img-fluid img-thumb" style="max-width:240px; max-height: 200px;" alt="Ricardo Velázquez Bosco" data-bs-toggle="modal" data-bs-target="#imageModal">
+                <figcaption class="figure-caption text-muted">Fig. 2. Fausto de Elhuyar</figcaption>
+                </figure>   
+                </div>
+        </div>
+        <div class="col-lg-6">
+            <h3 class="mb-4">Juan José de Elhuyar</h3>
+                <p>
+                    Juan José de Elhuyar y Lubice nació en 1754 en Logroño y entre 1773 y 1777 estudió cirugía, matemáticas e historia natural en París. Durante los 3 años siguientes continuó 
+                    su formación en otras instituciones europeas. En 1781 se encuentra pensionado en Suecia (química para fabricación de cañones) aprendiendod de Bergman y Scheele métodos modernos de
+                    laboratorio que le sugieren que hay un nuevo elemento en el mineral tungsten (hoy llamado sheelita). En 1783 obtiene dicho nuevo metal, el wolframio con su hermano. En 1784 se comvierte 
+                    en director de minas de plata de Santa Fé de Bogotá (actual Bogotá, Colombia, Virreinato de Nueva Granada) donde colabora con Celestino Mutis. Finalmente en 1796 fallece en Bogotá. 
+                    Su hijo José Luciano D’Elhuyar y Batista (1793-1815) fue un militar colombiano de la guerra de la independencia de su país.
+                </p>
+                <div class="d-flex justify-content-center align-items-start gap-3 flex-wrap">
+                <figure class="figure text-center m-0">
+                <img src="../assets/parada7/juanjose_elhuyar.jpg" class="img-fluid img-thumb" style="max-width:240px; max-height: 200px;" alt="Ricardo Velázquez Bosco" data-bs-toggle="modal" data-bs-target="#imageModal">
+                <figcaption class="figure-caption text-muted">Fig. 3. Juan José de Elhuyar</figcaption>
+                </figure>   
+                </div>
+        </div>
+    </div>
+
+    <div class="row px-5 py-5">
+        <h2 class="mt-3 mb-4">Acerca del wolframio</h2>
+        <p>
+            En 1781, el químico sueco Carl Wilhelm Scheele estudió un mineral muy denso al que llamó tungsten (“piedra pesada”), hoy conocido como scheelita (CaWO₄). A partir de él identificó el óxido 
+            del nuevo metal (WO₃), pero no llegó a aislarlo.
+        </p>
+        <p>
+            Dos años después, en 1783, los hermanos riojanos Fausto y Juan José de Elhuyar, trabajando en el Real Seminario Patriótico de Vergara, consiguieron aislar por primera vez el metal puro a partir de 
+            la wolframita (Fe,Mn)WO₄. Presentaron el hallazgo en su memoria Análisis químico del volfram y examen de un nuevo metal, publicada por la Real Sociedad Bascongada de los Amigos del País ese mismo 
+            año. Propusieron llamarlo wólfram, tomando el nombre del mineral del que lo extrajeron; de ahí procede el símbolo químico W (hoy conviven en español los nombres “wolframio” y “tungsteno”).
+        </p>
+            <div class="d-flex justify-content-center align-items-start gap-3 flex-wrap">
+                <figure class="figure text-center m-0">
+                <img src="../assets/parada7/proceso.png" class="img-fluid img-thumb" style="max-width:350px; max-height: 300px;" alt="Ricardo Velázquez Bosco" data-bs-toggle="modal" data-bs-target="#imageModal">
+                <figcaption class="figure-caption text-muted">Fig. 1. Proceso de descubrimiento del Wolframio</figcaption>
+                </figure>   
+            </div>
+    </div>
+
+</div>
+
+<!--cambiar contenido por el propioooo-->
+<div class="container-fluid">
+    <h2 class="mt-5 mb-3 px-5">Más información</h2>
+    <p class="px-5">
+    </p>
+        <div class="accordion px-5" id="infoAccordion">
+            <!-- Sitios web -->
+            <div class="accordion-item">
+                <h3 class="accordion-header" id="headingSites">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSites">Sitios oficiales</button>
+                </h3>
+                <div id="collapseSites" class="accordion-collapse collapse show" data-bs-parent="#infoAccordion">
+                <div class="accordion-body">
+                    <ul class="list-unstyled">
+                        <li>🔗 <a href="https://www.congreso.es/es/" target="_blank">Congreso de los diputados - Página Oficial</a></li>
+                        <li>🔗 <a href="https://cadenaser.com/programa/2021/11/05/ser_historia/1636104027_248371.html" target="_blank">Los hermanos D'Elhuyar - Cadena Ser</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+            </div>
+            <!-- Vídeos -->
+            <div class="accordion-item">
+                <h3 class="accordion-header" id="headingVids">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseVids">
+                    Vídeos y tours virtuales
+                    </button>
+                </h3>
+                <div id="collapseVids" class="accordion-collapse collapse" data-bs-parent="#infoAccordion">
+                    <div class="accordion-body">
+                    <ul class="list-unstyled">
+                        <li>🎥 <a href="https://www.youtube.com/watch?v=pbM6fDAExO8" target="_blank">Congreso de los Diputados - Tour virtual</a></li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+<div class="text-center py-5">
+    <p>“El Parlamento es la conciencia pública en voz alta.”</p>
+    <footer class="blockquote-footer">Emilio Castelar</footer>
+    <div class="text-center py-2 mb-5"><a id="btn-back" href="#" class="btn btn-secondary">← Volver al mapa</a></div>
+</div>
+</div>
+
+<footer class="bg-dark text-white py-3 text-center">
+    <p class="mb-0">© 2025 - Proyecto TFM Ingeniería Industrial | Universidad Politécnica de Madrid</p>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="zoom_img.js"></script>
+
+<script>
+(function () {
+    // Lee "from" SOLO de la URL. Si no viene, NO uses sessionStorage.
+    const params = new URLSearchParams(location.search);
+    let from = params.get('from');                 // 'gps' | 'home' | null
+
+    // Opcional: si no viene 'from', intenta inferir 'gps' solo si vienes de scan.html
+    if (!from) {
+        try {
+        const ref = document.referrer ? new URL(document.referrer) : null;
+        if (ref && ref.origin === location.origin && /\/scan\.html?$/.test(ref.pathname)) {
+            from = 'gps';
+        }
+        } catch {}
+    }
+
+    // Si AÚN no hay 'from', por defecto asume 'home'
+    if (!from) from = 'home';
+
+    // Guarda en sessionStorage SOLO si vino en la URL (para navegación interna dentro de la misma parada)
+    if (params.has('from')) {
+        sessionStorage.setItem('from_parada', from);
+    }
+
+    // Rutas de vuelta (ajusta a tu estructura real)
+    const BACK_GPS  = './gps.html';   // mapa con GPS
+    const BACK_HOME = './casa.html';      // mapa “desde casa” (o ../ruta.html)
+
+    function onBack(e) {
+        e.preventDefault();
+        if (from === 'gps') {
+        // Fuerza volver al mapa GPS (saltando scan.html)
+        window.location.assign(BACK_GPS);
+        } else {
+        // 'home' u otro → vuelve al mapa normal
+        window.location.assign(BACK_HOME);
+        }
+    }
+
+    document.getElementById('btn-back').addEventListener('click', onBack);
+})();
+</script>
+
+</body>
+</html>

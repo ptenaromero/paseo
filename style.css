@@ -1,0 +1,121 @@
+
+.navbar-collapse.show .nav-item {
+    border-bottom: 1px solid #ccc;
+    transition: border-color 0.1s ease;
+}
+
+.navbar-collapse.collapsing .nav-item {
+    border-bottom: 1px solid #ccc; 
+}
+
+.navbar-collapse.collapsing .nav-item:last-child {
+    border-bottom: none; 
+}
+
+.navbar-collapse.show .nav-item:last-child {
+    border-bottom: none;
+}
+
+.navbar {
+    background-color: #31708e;
+    /*background: linear-gradient(to right, hsl(0, 0%, 100%), rgb(245, 245, 245));*/
+    color: white;
+    text-align: center;
+}
+
+header {
+    background: #1B4F63;
+    color: white;
+    text-align: center;
+}
+
+#Acercaproyecto{
+    background: linear-gradient(to right, hsl(0, 0%, 100%), rgb(245, 245, 245));
+}
+
+.modal-backdrop.show {
+    background-color: rgba(0, 0, 0, 1); /* nivel de opacidad al abrir modal*/
+    opacity: 0.75;
+}
+
+#sidebar button {
+    text-align: left;
+    border-left: 4px solid #0d6efd;
+    transition: all 0.2s ease;
+}
+
+#sidebar button:hover {
+    background-color: #e9f0ff;
+}
+
+#div1porce {
+    background-color:  #ffffff;;
+}
+
+/*  CSS DEL SLIDER */
+
+
+/* viewport */
+.slider-window{
+    position: relative;
+    overflow: hidden;
+    border-radius: .75rem;         /* alinea con el contenedor */
+}
+
+/* tira deslizante */
+.slider-track{
+    display:flex;
+    gap:2rem;                    /* separación entre tarjetas */
+    transition: transform .35s ease;
+    will-change: transform;
+}
+
+/* tarjetas: 3 visibles, misma altura, bordes redondeados */
+.slider-item{
+    flex:0 0 calc(100% / 3);
+    aspect-ratio:16 / 9;
+    border-radius: .75rem;
+    overflow:hidden;             /* recorta la imagen dentro del radio */
+}
+.slider-item img{
+    width:100%; height:100%;
+    object-fit:cover;
+    display:block;
+    border-radius:inherit;       /* asegura el redondeo en la última */
+}
+
+/* flechas centradas verticalmente y superpuestas */
+.slider-nav{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:44px; height:44px;
+    display:inline-flex; align-items:center; justify-content:center;
+    z-index:2;
+}
+
+
+.slider-prev{ left: 1rem; }
+.slider-next{ right: 1rem; }
+
+.slider-nav:focus,
+.slider-nav:focus-visible{
+    outline: none;                               
+    box-shadow: 0 0 0 .25rem rgba(13,110,253,.25);
+    border-radius: .5rem;                       
+}
+
+.leaflet-tooltip.marker-num{
+    background: transparent; 
+    border: none; 
+    box-shadow: none;
+    color:#3c05d1; 
+    font-weight:700; 
+    text-shadow:0 1px 2px rgba(0,0,0,.8);
+}
+
+.btn-parada {
+    background-color: #31708e !important;
+    color: #fff !important;
+    border-color: #31708e !important;
+}

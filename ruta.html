@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <style>
+    html, body {
+    height: 100%;
+    margin: 0;
+    }
+    body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    }
+    main {
+    flex: 1;
+    }
+    </style>
+</head>
+<body class="d-flex flex-column min-vh-100 bg-light">
+    
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+        <span class="navbar-brand">Paseo Didáctico</span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegación">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link active" href="ruta.html">La Ruta</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="/ruta/kahoot.html">Actividades</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="mailto:pedro.detena.romero@alumnos.upm.es" target="_blank">Contacto</a>
+            </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main>
+<header class="py-5 header-ruta">
+    <div class="container">
+        <div class="row align-items-center">
+        <!-- Texto a la izquierda -->
+        <div class="col-md-9 text-center text-white">
+            <h1 class="mb-2">Explora la Ruta Didáctica</h1>
+            <p class="lead mb-0">
+                Reproduce el video para ver una breve introducción a la Ilustración española
+            </p>
+        </div>
+
+        <!-- Vídeo a la derecha -->
+        <div class="col-md-3 d-flex justify-content-md-end justify-content-center mt-4 mt-md-0">
+            <div class="ratio ratio-16x9 header-video">
+            <video id="introVideo" class="w-100 rounded shadow" controls>
+                <source src="../assets/Introduccion.mp4" type="video/mp4">
+                Tu navegador no soporta la reproducción de vídeo.
+            </video>
+            </div>
+        </div>
+        </div>
+    </div>    
+</header>
+
+
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">A continuación se muestra una previsualización de ambos modos de uso de la aplicación</h2>
+        <!-- Sección del vídeo de introducción -->
+        <div class="container my-5">
+        <div class="row justify-content-center">
+        <!-- Opción: Desde casa -->
+        <div class="col-md-5 mb-4">
+            <div class="card h-100 shadow-sm border-0 hover-card" data-bs-toggle="modal" data-bs-target="#modalCASA" style="cursor:pointer;">
+                <img src="assets/explorar.jpg" class="card-img-top" style="height: 320px;" alt="Explora desde casa">
+                <div class="card-body">
+                <h5 class="card-title text-center">Explorar desde casa</h5>
+                <p class="card-text text-center text-muted">Recorre la ruta de forma interactiva en un mapa sin moverte de casa.</p>
+                </div>
+            </div>
+            </a>
+        </div>
+
+        <!-- Opción: Con GPS -->
+        <div class="col-md-5 mb-4">
+            <div class="card h-100 shadow-sm border-0 hover-card" data-bs-toggle="modal" data-bs-target="#modalGPS" style="cursor:pointer;">
+                <img src="assets/explorar_gps.jpg" class="card-img-top" style="height: 320px;" alt="Explora con GPS">
+                <div class="card-body">
+                <h5 class="card-title text-center">Explorar con GPS</h5>
+                <p class="card-text text-center text-muted">Sigue la ruta didáctica en el mundo real con tu móvil y GPS.</p>
+                </div>
+            </div>
+            </a>
+        </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modales -->
+<div class="modal modal-lg fade " id="modalCASA" aria-hidden="true" aria-labelledby="modalCASAlabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="modalCASAlabel">Vídeo explicativo</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <video id="videoCasa" controls width="100%">
+                <source src="../assets/Version_casa.mp4" type="video/mp4">
+                Tu navegador no soporta el vídeo.
+            </video>
+        </div>
+        <div class="modal-footer">
+            <a href="ruta/casa.html" class="btn btn-primary btn-lg">Continuar</a>        </div>
+        </div>
+    </div>
+    </div>
+
+<div class="modal modal-lg fade" id="modalGPS" aria-hidden="true" aria-labelledby="modalGPSlabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="modalGPSlabel">Vídeo explicativo</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <video id="videoGps"  controls width="100%">
+                <source src="../assets/Version_gps.mp4" type="video/mp4">
+                Tu navegador no soporta el vídeo.
+            </video>        
+        </div>
+        <div class="modal-footer">
+            <a href="ruta/gps.html" class="btn btn-primary btn-lg">Continuar</a>
+        </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+
+</div>
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-dark text-white py-3 text-center">
+    <p class="mb-0">© 2025 - Proyecto TFM Ingeniería Industrial | Universidad Politécnica de Madrid</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+<script>
+    window.addEventListener('pageshow', () => {
+        localStorage.removeItem('paradasVisitadas');
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const introVideo = document.getElementById('introVideo');
+
+        const modalCASA = document.getElementById('modalCASA');
+        const modalGPS  = document.getElementById('modalGPS');
+
+        const videoCasa = document.getElementById('videoCasa');
+        const videoGps  = document.getElementById('videoGps');
+
+        function stopVideo(video) {
+            if (!video) return;
+            video.pause();
+            video.currentTime = 0;
+        }
+
+        // 1) Al abrir cualquier modal, pausar el vídeo de introducción
+        [modalCASA, modalGPS].forEach(function (modal) {
+            if (!modal) return;
+            modal.addEventListener('show.bs.modal', function () {
+                if (introVideo && !introVideo.paused) {
+                    introVideo.pause();
+                }
+            });
+        });
+
+        // 2) Al cerrar cada modal, parar su vídeo y resetearlo
+        modalCASA.addEventListener('hidden.bs.modal', function () {
+            stopVideo(videoCasa);
+        });
+
+        modalGPS.addEventListener('hidden.bs.modal', function () {
+            stopVideo(videoGps);
+        });
+    });
+
+</script>
+
+</body>
+</html>

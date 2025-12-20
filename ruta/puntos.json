@@ -1,0 +1,97 @@
+[
+  {
+    "nombre": "Parque del retiro",
+    "descripcion": "Restos de la antigua fábrica de cerámica 'La China', introducción al contexto de la Ilustración española.",
+    "lat": 40.4145,
+    "lng": -3.6839,
+    "id":"retiro_porcelana",
+    "imagen1": "../assets/parada1/fabrica_porcelana_1.jpg",
+    "imagen2": "../assets/parada1/fabrica_porcelana_2.jpg",
+    "audio": "audio/observatorio.mp3",
+    "slug" : "retiro_porcelana.html",
+    "targetIndex": 0
+  },
+  {
+    "nombre": "Real Observatorio de Madrid",
+    "descripcion": "Centro astronómico fundado por Carlos III en el siglo XVIII, clave en el desarrollo científico.",
+    "lat": 40.408398 ,
+    "lng": -3.687706,
+    "id":"observatorio",
+    "imagen1": "../assets/parada2/Observatorio1.jpg",
+    "imagen2": "../assets/parada2/Observatorio2.jpg",
+    "audio": "audio/observatorio.mp3",
+    "slug" : "observatorio.html",
+    "targetIndex": 1
+  },
+  {
+    "nombre": "Palacio de Fomento",
+    "descripcion": "Edificio del siglo XIX con escultura de Antonio de Ulloa, pionero en el descubrimiento del platino.",
+    "lat": 40.409,
+    "lng": -3.6905,
+    "id":"palacio_fomento",
+    "imagen1": "../assets/parada3/Ministerio.jpg",
+    "audio": "audio/fomento.mp3",
+    "slug" : "palacio_fomento.html",
+    "targetIndex": 2
+  },
+  {
+    "nombre": "Real Jardín Botánico",
+    "descripcion": "Centro botánico ilustrado, sede de expediciones científicas como la de Celestino Mutis.",
+    "lat": 40.4112,
+    "lng": -3.6906,
+    "id": "jardin_botanico",
+    "imagen1": "../assets/parada4/jardin_botanico_entrada.jpg",
+    "imagen2": "../assets/parada4/jardin_botanico_entrada_antigua.jpg",
+    "audio": "audio/jardin.mp3",
+    "slug" : "jardin_botanico.html",
+    "targetIndex": 3
+  },
+  {
+    "nombre": "Museo del Prado",
+    "descripcion": "Antiguo Gabinete de Historia Natural, transformado en museo de arte en 1819.",
+    "lat": 40.4138,
+    "lng": -3.6921,
+    "id": "prado",
+    "imagen1": "../assets/parada5/Museo_del_Prado.jpg",
+    "imagen2": "../assets/parada5/Prado2.jpg",
+    "audio": "audio/prado.mp3",
+    "slug" : "prado.html",
+    "targetIndex": 4
+  },
+  {
+    "nombre": "Casa de la Platina",
+    "descripcion": "Fábrica y laboratorio de platino en el siglo XVIII, sede actual de la Escuela de Artes Aplicadas.",
+    "lat": 40.4186,
+    "lng": -3.6981,
+    "id": "casa_platina",
+    "imagen1": "../assets/parada6/casa_platina.jpg",
+    "imagen2": "../assets/parada6/Platina2.jpg",
+    "audio": "audio/platina.mp3",
+    "slug" : "casa_platina.html",
+    "targetIndex": 5
+  },
+  {
+    "nombre": "Palacio de las Cortes",
+    "descripcion": "Cerca vivió Fausto de Elhuyar, descubridor del tungsteno y figura clave en la minería de Nueva España.",
+    "lat": 40.4158,
+    "lng": -3.6986,
+    "id": "cortes_elhuyar",
+    "imagen1": "../assets/parada7/palaciode_lascortes.jpg",
+    "imagen2": "../assets/parada7/Cortes2.jpg",
+    "audio": "audio/elhuyar.mp3",
+    "slug" : "cortes_elhuyar.html",
+    "targetIndex": 6
+  },
+  {
+    "nombre": "Calle Ave María (Casa natal de Del Río)",
+    "descripcion": "Lugar de nacimiento del descubridor del vanadio, Andrés Manuel del Río.",
+    "lat": 40.4082,
+    "lng": -3.7001,
+    "id": "casa_delrio",
+    "imagen1": "../assets/parada8/Andres_manuel_delrio.jpg",
+    "imagen2": "../assets/parada8/DelRio2.jpg",
+    "audio": "audio/delrio.mp3",
+    "slug" : "casa_delrio.html",
+    "targetIndex": 7
+  }
+]

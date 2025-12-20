@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Detalle de Parada</title>
+    <!-- Estilos Bootstrap y Leaflet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+<style>
+body {
+    font-family: 'Lato', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', serif;
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark ">
+    <div class="container-fluid text-white">
+        <span class="navbar-brand">Paseo Didáctico</span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegación">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="../index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="../ruta.html">La Ruta</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="/ruta/kahoot.html">Actividades</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="mailto:pedro.detena.romero@alumnos.upm.es" target="_blank">Contacto</a>
+            </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid py-5" id="div1porce">
+
+<div class="px-5">
+<h1 class="mb-4">Parque del Retiro – Fábrica de Porcelana del Buen Retiro</h1>
+
+<div class="row">
+<div class="container-fluid ">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a class="nav-link text-secondary" href="casa.html">Mapa</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Parque del retiro - Fábrica de porcelana</li>
+        </ol>
+    </nav>
+</div>
+<div class="col-lg-8">
+<!--poner el col-lg-8 aqui y descomentar lo anterior para mapa a altura de texto-->
+        <p class="text-justify">
+        En pleno corazón del Retiro, se encuentran los vestigios de una de las joyas industriales del siglo XVIII: la Fábrica de Porcelana del Buen Retiro, también conocida como “La China”.
+        La fábrica (un ejemplo de manufacturas reales) fue fundada por Carlos III en el emplazamiento de una antigua ermita, su objetivo era competir con la porcelana de Meissen y Sèvres, produciendo
+        piezas de altísima calidad para decorar tanto el Palacio Real como otros edificios reales. Dicha fábrica empleaba una técnica de fabricación considerada como secreto de estado.
+        </p>
+        <p class="text-justify">
+        Aunque en ocasiones puede leerse que fue destruida por las tropas de Napoleón (motivadas por la calidad de sus productos, que estaban empezando a hacer daño a la fábrica francesa de 
+        Sèvres), aparentemente fue destruida en 1812 por las tropas inglesas, tras derrotar a los franceses que la ocupaban, durante la Guerra de Independencia, hoy solo quedan los restos de una de las noria hidráulica
+        del parque, empleada en la fábrica y ubicada en el Huerto del Francés.
+        </p>
+        <p>
+        Esta parada es una introducción al espíritu de la Ilustración: una época de reformas, ciencia, técnica, arte e industria. Carlos III promovió una red de instituciones científicas que transformaron Madrid.
+        </p>
+    </div>
+    <div class="col-lg-4 d-flex justify-content-center align-items-center">
+        <div class=" mb-3mb-3">
+            <iframe src="https://www.google.com/maps?q=40.4145,-3.6839&hl=es&z=17&output=embed" allowfullscreen loading="lazy"></iframe>
+            <audio controls class="w-100 my-3">
+            <source src="../assets/audio/Descubre la Historia Oculta del Retiro.mp4" type="audio/mpeg">
+            Tu navegador no soporta el elemento <code>audio</code>.
+        </audio>
+        
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+<!-- === GALERÍA CON SLIDER === -->
+<section class="container-fluid px-5 my-5">
+    <h2 class="mb-3">Galería</h2>
+
+    <div class="slider">
+        <div class="slider-window">  <!-- viewport -->
+        <div id="sliderTrack" class="slider-track">
+            <div class="slider-item">
+            <img src="../assets/parada1/fabrica_porcelana_1.jpg" class="w-100 h-100 object-fit-cover" alt="">
+            </div>
+            <div class="slider-item">
+            <img src="../assets/parada1/noria_retiro.jpg" class="w-100 h-100 object-fit-cover" alt="">
+            </div>
+            <div class="slider-item">
+            <img src="../assets/parada1/porcelana.jpg" class="w-100 h-100 object-fit-cover" alt="">
+            </div>
+            <div class="slider-item">
+            <img src="../assets/parada1/noria_retiro2.jpg" class="w-100 h-100 object-fit-cover" alt="">
+            </div>
+        </div>
+
+        <!-- flechas superpuestas (no alteran el ancho del layout) -->
+        <button id="prevBtn" class="btn btn-outline-primary slider-nav slider-prev" aria-label="Anterior">❮</button>
+        <button id="nextBtn" class="btn btn-outline-primary slider-nav slider-next" aria-label="Siguiente">❯</button>
+        </div>
+    </div>
+</section>
+
+<div>
+    <h2 class="mt-4 mb-3 px-5">Recreación</h2>
+    <div class="row align-items-center">
+    <div class="col-lg-8">
+    <div class="px-5">
+    <p>
+        Si hablamos de la antigua fábrica de porcelana es imposible evitar tratar de imaginarse el aspecto de la misma durante la época. Si te atreves a viajar al pasado, escanea el código QR que encontrarás
+        a continuación para visualizar una Ilustración, creada por Giuseppe Gricci, de como sería la entrada de la fábrica, así como una Ilustración creada mediante uso de IA en representación de la misma. 
+    </p>
+    </div>
+    </div>
+    <div class="col-lg-4 d-flex justify-content-lg-center justify-content-center align-items-start">
+        <img src="../Ilustraciones Real Fábrica de Porcelana siglo XVIII.png" class="img-fluid " style="max-width: 150px"; alt="">
+    </div>
+    </div>
+    <!--https://www.museodelprado.es/coleccion/artista/real-fabrica-de-porcelana-del-buen-retiro/6ad0e2a2-df27-46d8-87f8-628c1d926dea Para mas info esta pagina https://www.miradormadrid.com/noria-del-retiro/ -->
+</div>
+
+<div>
+    <h2 class="mt-5 mb-3 px-5">Más información</h2>
+    <p class="px-5">
+        A día de hoy, son múltiples las páginas que se pueden encontrar que contengan información a cerca de la Real Fábrica de Porcelana de El Retiro, es por ello que, para toda persona que sienta curiosidad por 
+        ahondar en el tema y descubrir más información, así como curiosidades, se pone a disposición diferentes links.
+    </p>
+        <div class="accordion px-5" id="infoAccordion">
+            <!-- Sitios web -->
+            <div class="accordion-item">
+                <h3 class="accordion-header" id="headingSites">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSites">Sitios oficiales</button>
+                </h3>
+                <div id="collapseSites" class="accordion-collapse collapse show" data-bs-parent="#infoAccordion">
+                <div class="accordion-body">
+                    <ul class="list-unstyled">
+                        <li>🔗 <a href="https://www.miradormadrid.com/noria-del-retiro/" target="_blank">Mirador Madrid</a></li>
+                        <li>🔗 <a href="https://www.museodelprado.es/coleccion/artista/real-fabrica-de-porcelana-del-buen-retiro/6ad0e2a2-df27-46d8-87f8-628c1d926dea" target="_blank">Museo del Prado</a></li>
+                        <li>🔗 <a href="http://cvc.cervantes.es/ACTCULT/patrimonio/ceramica/buen_retiro/" target="_blank">Centro Virtual Cervantes</a></li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+            <!-- Documentos 
+            <div class="accordion-item">
+                <h3 class="accordion-header" id="headingDocs">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDocs">
+                Documentos y artículos
+                </button>
+                </h3>
+            <div id="collapseDocs" class="accordion-collapse collapse" data-bs-parent="#infoAccordion">
+                <div class="accordion-body">
+                    <ul class="list-unstyled">
+                    <li>📄 <a href="docs/excavacion-retiro.pdf" target="_blank">Informe de las excavaciones (1996–2000)</a></li>
+                    <li>📄 <a href="docs/tecnicas-porcelana.pdf" target="_blank">Técnicas de fabricación y secretos de estado</a></li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+            -->
+            <!-- Vídeos -->
+            <div class="accordion-item">
+                <h3 class="accordion-header" id="headingVids">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseVids">
+                    Vídeos y tours virtuales
+                    </button>
+                </h3>
+                <div id="collapseVids" class="accordion-collapse collapse" data-bs-parent="#infoAccordion">
+                    <div class="accordion-body">
+                    <ul class="list-unstyled">
+                        <li>🎥 <a href="https://www.youtube.com/watch?v=0TlI8WhfXMo" target="_blank">Tour 360° Jardines del Retiro</a></li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+<div class="text-center py-5">
+    <p>“La Ilustración es la salida del hombre de su autoculpable minoría de edad.”</p>
+    <footer class="blockquote-footer">Immanuel Kant</footer>
+    <div class="text-center py-2 mb-5"><a id="btn-back" href="#" class="btn btn-secondary">← Volver al mapa</a></div>
+</div>
+</div>
+
+<footer class="bg-dark text-white py-3 text-center">
+    <p class="mb-0">© 2025 - Proyecto TFM Ingeniería Industrial | Universidad Politécnica de Madrid</p>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+<script>
+(function () {
+    const viewport = document.querySelector('.slider-window');
+    const track    = document.getElementById('sliderTrack');
+    const items    = Array.from(track.children);
+    const prevBtn  = document.getElementById('prevBtn');
+    const nextBtn  = document.getElementById('nextBtn');
+    const total    = items.length;
+
+    function getVisible() {
+        if (window.matchMedia('(max-width:576px)').matches) return 1;
+        if (window.matchMedia('(max-width:992px)').matches) return 2;
+        return 3; // desktop
+    }
+
+    let visible, maxIdx, index = 0, stepPx = 0;
+
+    function layout() {
+        visible = getVisible();
+
+            // gap horizontal actual (en px)
+        const cs  = getComputedStyle(track);
+        const gap = parseFloat(cs.gap) || 0;
+
+            // ancho del viewport (sin padding)
+        const vw = viewport.clientWidth;
+
+            // ancho exacto de cada tarjeta (px), descontando gaps
+        const itemW = (vw - gap * (visible - 1)) / visible;
+
+            // fijamos ese ancho a las tarjetas
+        items.forEach(el => el.style.flex = `0 0 ${itemW}px`);
+
+            // cada paso es tarjeta + gap
+        stepPx = itemW + gap;
+
+        maxIdx = Math.max(0, total - visible);
+        index  = Math.min(index, maxIdx);
+    }
+
+    function update() {
+        track.style.transform = `translateX(${-index * stepPx}px)`;
+        prevBtn.disabled = index === 0;
+        nextBtn.disabled = index === maxIdx;
+    }
+
+    prevBtn.addEventListener('click', () => { if (index > 0) { index--; update(); }});
+    nextBtn.addEventListener('click', () => { if (index < maxIdx) { index++; update(); }});
+
+    window.addEventListener('resize', () => { layout(); update(); });
+
+    layout();
+    update();
+})();
+</script>
+
+<script>
+(function () {
+    // Lee "from" SOLO de la URL. Si no viene, NO uses sessionStorage.
+    const params = new URLSearchParams(location.search);
+    let from = params.get('from');                 // 'gps' | 'home' | null
+
+    // Opcional: si no viene 'from', intenta inferir 'gps' solo si vienes de scan.html
+    if (!from) {
+        try {
+        const ref = document.referrer ? new URL(document.referrer) : null;
+        if (ref && ref.origin === location.origin && /\/scan\.html?$/.test(ref.pathname)) {
+            from = 'gps';
+        }
+        } catch {}
+    }
+
+    // Si AÚN no hay 'from', por defecto asume 'home'
+    if (!from) from = 'home';
+
+    // Guarda en sessionStorage SOLO si vino en la URL (para navegación interna dentro de la misma parada)
+    if (params.has('from')) {
+        sessionStorage.setItem('from_parada', from);
+    }
+
+    // Rutas de vuelta (ajusta a tu estructura real)
+    const BACK_GPS  = './gps.html';   // mapa con GPS
+    const BACK_HOME = './casa.html';      // mapa “desde casa” (o ../ruta.html)
+
+    function onBack(e) {
+        e.preventDefault();
+        if (from === 'gps') {
+        // Fuerza volver al mapa GPS (saltando scan.html)
+        window.location.assign(BACK_GPS);
+        } else {
+        // 'home' u otro → vuelve al mapa normal
+        window.location.assign(BACK_HOME);
+        }
+    }
+
+    document.getElementById('btn-back').addEventListener('click', onBack);
+})();
+</script>
+
+</body>
+</html>

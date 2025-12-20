@@ -1,0 +1,323 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Detalle de Parada</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+<style>
+body {
+    font-family: 'Lato', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', serif;
+}
+.img-thumb { 
+    cursor: zoom-in; 
+}
+#imageModalImg { 
+    max-height: 75vh; object-fit: contain; 
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark ">
+    <div class="container-fluid text-white">
+        <span class="navbar-brand">Paseo Didáctico</span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegación">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="../index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="../ruta.html">La Ruta</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="/ruta/kahoot.html">Actividades</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="mailto:pedro.detena.romero@alumnos.upm.es" target="_blank">Contacto</a>
+            </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header class="position-relative d-flex align-items-center justify-content-center text-center text-white" style="height: 75vh; background: url('../assets/parada8/mapa_madrid_antiguo.jpg') center/cover no-repeat;">
+    <!-- Overlay semitransparente -->
+    <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
+    <!-- Contenido encima del overlay -->
+    <div class="position-relative px-3">
+        <!-- <span class="badge bg-primary-subtle text-primary">Parada</span> -->
+        <h1 class="display-4">Andrés Manuel del Río</h1>
+        <p class="lead">Lugar de nacimiento de Andrés Manuel del Río</p>
+        <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#historicoModal"> Ver mapa completo </button>
+    </div>
+</header>
+
+<!-- 1) Modal de Bootstrap -->
+    <div class="modal fade" id="historicoModal" tabindex="-1" aria-labelledby="historicoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content">
+            <div class="modal-header justify-content-center border-0">
+            <h5 class="modal-title" id="historicoModalLabel">Mapa de Madrid en el siglo XVIII</h5>
+            </div>
+            <div class="modal-body d-flex justify-content-center p-0">
+            <img src="../assets/parada8/mapa_madrid_antiguo.jpg" class="img-fluid mb-3" alt="Observatorio histórico">
+            </div>
+            <div class="modal-footer border-0">
+            </div>
+        </div>
+        </div>
+    </div>
+
+<div class="container-fluid py-5">
+<h1 class="mb-4 px-5">Andrés Manuel del Río</h1>
+    <div class="container-fluid px-5">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a class="nav-link text-secondary" href="casa.html">Mapa</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Andrés Manuel del Río</li>
+        </ol>
+    </nav>
+    
+        <div class="row mb-4">
+            <div class="col-lg-8">
+            <p>
+            Andrés Manuel del Río, fue un naturalista, químico y minerólogo español, nacionalizado mexicano, nacido en 1745 en la calle del Ave María, en el barrio de Lavapiés. 
+            Concretamente, en la casa nº 17, más tarde demolida y reconstruida como el actual nº 23 (véase Fig. 1). 
+            </p>
+            <p>
+            La ruta pasa también por la iglesia de San Sebastián (calle de Atocha, 39), 
+            iglesia en la cuál fue bautizado, y por el actual Instituto San Isidro, entonces llamado antiguos Reales Estudios de San Isidro (reabierto en 1770), en la calle de Toledo, 
+            donde cursó sus estudios.
+            </p>
+            <p>
+            Entre 1778 y 1781, Andrés Manuel del Río compagina su formación con estudio de leyes en dominicales de la Real Universidad de Alcalá. En 1781 Bachiller en Artes.
+            </p>
+            </div>
+            <div class="col-lg-4 d-flex justify-content-center">
+                <div class="d-flex justify-content-center align-items-start gap-3 flex-wrap">
+                <figure class="figure text-center m-0">
+                <img src="../assets/parada8/calle_ave_maria23.jpg" class="img-fluid img-thumb" style="max-width:240px; " alt="Ricardo Velázquez Bosco" data-bs-toggle="modal" data-bs-target="#imageModal">
+                <figcaption class="figure-caption text-muted">Fig. 1. Casa de del Río</figcaption>
+                </figure>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <!--<h2  class="mb-4 "> </h2>-->
+            <div class="col-lg-4">
+                <figure class="figure text-center m-0">
+                <img src="../assets/parada8/Andres_manuel_delrio.jpg" class="img-fluid img-thumb"  alt="Ricardo Velázquez Bosco" data-bs-toggle="modal" data-bs-target="#imageModal">
+                <figcaption class="figure-caption text-muted">Fig. 2. Imagen de Andrés Manuel del Río</figcaption>
+                </figure>
+            </div>
+            <div class="col-lg-8">
+                <p>
+                    Entre los años 1784 y 1793, cuenta con formación en París (con Jane d’Arcet: director de la Manufacture Nationale de Sévres), Schemnitz, Freiberg (coincidiendo 
+                    con Werner, F. Elhuyar y A. von Humboldt), Viena, Inglaterra.... Tras formarse en Minería y Química durante su estancia en centro Europa, en 1793 fue nombrado
+                    profesor del Real Seminario de Minería de México, donde enseñó Mineralogía y Laboreo de minas.
+                </p>
+                <p>
+                    Tras 26 años en tierras mexicanas regresó a España como representante de Nueva España en las Cortes del Trienio Liberal (1820-1823), entonces ubicadas en el edificio
+                    que hoy ocupa el Senado. Una vez aprobada la independencia, se le ofrece dirigir las minas de Almadén y el Gabinete de Historia Natural. De esta manera y entre 1822 y 
+                    1829 vuelve a México como introductor de embajadores en la Corte de Agustín I y con el descubrimiento de nuevos minerales...
+                </p>
+                <p>
+                    Entre 1829 y 1835 se produce su Autoexilio en Filadelfia, EEUU, por Decreto de expulsión de españoles (con excepciones). Haciéndose socio de la American Philosophical Society 
+                    (B. Franklin, 1743), y siendo el primer presidente de la Sociedad Geológica de Pensilvania. Finalmente fallecería en México en el año 1849.
+                </p>
+                <audio controls class="w-20 my-3"></audio>
+                <source src="../audio/retiro.mp3" type="audio/mpeg">
+            </div>
+        </div>
+
+        <div class="row mb-4 py-4">
+            <h2  class="mb-4 ">Sobre el Vanadio </h2>
+            <div class="col-lg-4 py-2">
+                <figure class="figure text-center m-0">
+                <img src="../assets/parada8/vanadio+carta.jpg" class="img-fluid img-thumb"  alt="Ricardo Velázquez Bosco" data-bs-toggle="modal" data-bs-target="#imageModal">
+                <figcaption class="figure-caption text-muted">Fig. 3. Ilustración de Vanadio</figcaption>
+                </figure>
+            </div>
+
+            <div class="col-lg-8 py-2">
+                <p>
+                    En 1801, Andrés Manuel del Río analizó en Zimapán un mineral conocido entonces como
+                    “plomo pardo”, que se creía fosfato de plomo. Hoy sabemos que era vanadinita (Pb<sub>5</sub>Cl(VO<sub>4</sub>)<sub>3</sub>). Del Río 
+                    detectó un 14,8 % de un óxido metálico desconocido y llegó a proponer varios nombres para el nuevo elemento <em>zimapanio</em> o <em>pancromo</em> antes de optar por
+                    <em>eritronio</em>, debido a la universalidad de colores de sus óxidos, disoluciones, sales y precipitados y, finalmente, por <em>eritronio</em> “por 
+                    formar con los álcalis y las tierras sales que se ponen rojas al fuego y con los ácidos”.
+                </p>
+                <p>
+                    En 1803 Del Río comunicó el hallazgo a Alexander von Humboldt en México, quien pensó que podía tratarse de <em>cromo</em> 
+                    (descubierto por Vauquelin en 1797) o de <em>uranio</em> (Klaproth, 1789). En 1804 Humboldt regresó a Europa con muestras para su análisis y una copia en francés
+                    de los manuscritos de Del Río. Posteriormente, en 1805<em> Hippolyte Victor Collet-Descotils</em> publicó sus resultados: interpretó que el
+                    mineral contenía un 16 % de ácido crómico y concluyó que no se trataba de un metal nuevo.
+                </p>
+                
+                <p>
+                    Sin embargo, en 1830, en Suecia , Nils Gabriel Sefström, con el apoyo de J. J. Berzelius, identificó un nuevo elemento en hierro de mineral de 
+                    Taberg y lo bautizó como Vanadio, por Vanadis (Freya), diosa escandinava de la belleza. Más tarde, en 1831, Friedrich Wöhler 
+                    analizó una muestra del “plomo pardo” de Humboldt y demostró que el óxido de vanadio era idéntico al eritronio de Del Río.
+                </p>
+                <p>
+                    Aproximadamente en 1833 un sobrino de Humboldt informó a Del Río, en Filadelfia, de que los cajones enviados a Francia con material para 
+                    análisis se habían perdido en un naufragio. Por otro lado, en 1831 Berzelius anunció haber obtenido el metal, aunque en realidad se trataba de
+                    <em>VN</em> (nitruro de vanadio).
+                </p>
+            </div>
+            <p class="py-1">
+                Finalmente en 1867 Henry Enfield Roscoe obtuvo vanadio metálico por reducción de VCl<sub>3</sub> con hidrógeno. Y ya en 1905 
+                fue el primer uso masivo del V: aleaciones para el acero del chasis del <em>Ford T</em>, que marcaron el inicio de su enorme importancia tecnológica.</li>
+            </p>
+
+            <h2 class="mb-4 py-2">Reconocimiento a la labor de Del Río</h2>
+                <p class="mb-5">
+                    Del Río es hoy reconocido como el verdadero pionero del descubrimiento del elemento.
+                    El 28 de enero de 2020, el Ayuntamiento de Madrid aprobó una proposición
+                    (n.º 2020/8000107) para dedicar a Andrés Manuel del Río Fernández
+                    un espacio o edificio público de carácter científico, en atención a su contribución a la ciencia,
+                    <em>concretamente, el descubrimiento del vanadio</em> y promover las medidas necesarias
+                    para dar visibilidad a su figura.
+                </p>
+
+                <div class="d-flex justify-content-center align-items-start gap-5 mb-4 py-2 flex-wrap">
+                    <figure class="figure text-center m-0">
+                        <img src="../assets/parada8/Imagen2.jpg" class="img-fluid img-thumb" style="max-width: 278px;" loading="lazy" data-bs-toggle="modal" data-bs-target="#imageModal"></iframe>
+                        <figcaption class="figure-caption text-muted">Fig. 3. Puerta con grabados de Del Río</figcaption>
+                    </figure>
+                    <figure class="figure text-center m-0">
+                        <img src="../assets/parada8/Imagen1.jpg" class="img-fluid img-thumb" style="max-width: 500px;" loading="lazy" data-bs-toggle="modal" data-bs-target="#imageModal"></iframe>
+                        <figcaption class="figure-caption text-muted">Fig. 4. Moneda en honor a Del Río</figcaption>
+                    </figure>
+                </div>
+
+            <h2 class="mb-4">Un guiño moderno al “eritronio” (2023)</h2>
+                <p>
+                    El término <em>eritronio</em> ha inspirado incluso a la química actual: el
+                    30 de julio de 2023, la revista <em>Chemistry – A European Journal</em> publicó el artículo
+                    <em>“Erythronium Bonds: Noncovalent Interactions Involving Group 5 Elements as Electron-Density Acceptors”</em>,
+                    donde se propone el concepto de “enlaces de eritronio” para ciertas interacciones
+                    no covalentes de elementos del <em>grupo 5</em> (vanadio, niobio y tantalio).
+                </p>
+                
+            <aside class="note">
+                <p>Por qué importa: La historia del vanadio ilustra cómo progresa la ciencia:
+                resultados adelantados a su tiempo, interpretaciones erróneas, pérdida de muestras y,
+                al fin, verificación independiente que restituye la autoría.</p>
+            </aside>
+
+            <figure class="figure text-center m-0">
+                <img src="../assets/parada8/revista.jpg" class="img-fluid img-thumb" style="max-width: 278px;" loading="lazy" data-bs-toggle="modal" data-bs-target="#imageModal"></iframe>
+                <figcaption class="figure-caption text-muted">Fig. 5. Revista Chemistry - A European Journal </figcaption>
+            </figure>
+
+        </div>
+
+
+    <div>
+    <h2 class="mt-5 mb-3">Más información</h2>
+        <div class="accordion" id="infoAccordion">
+            <!-- Sitios web -->
+            <div class="accordion-item">
+                <h3 class="accordion-header" id="headingSites">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSites">Sitios oficiales</button>
+                </h3>
+                <div id="collapseSites" class="accordion-collapse collapse show" data-bs-parent="#infoAccordion">
+                <div class="accordion-body">
+                    <ul class="list-unstyled">
+                        <li>🔗 <a href="https://revistas.unam.mx/index.php/req/article/view/82131" target="_blank">El Retablo de la Independencia: Obra de arte mexicana donde se homenajea a Andrés Manuel del Río y Fausto Delhuyar</a></li>
+                        <li>🔗 <a href="https://analesdequimica.es/index.php/AnalesQuimica/article/view/2062" target="_blank">Vida y obra de Andrés Manuel del Río, el científico hispanomexicano que descubrió el vanadio</a></li>      
+                    </ul>
+                </div>
+            </div>
+            </div>
+            <!-- Vídeos -->
+            <div class="accordion-item">
+                <h3 class="accordion-header" id="headingVids">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseVids">
+                    Vídeos y tours virtuales
+                    </button>
+                </h3>
+                <div id="collapseVids" class="accordion-collapse collapse" data-bs-parent="#infoAccordion">
+                    <div class="accordion-body">
+                    <ul class="list-unstyled">
+                        <li>🎥 <a href="https://www.youtube.com/watch?v=PYaPkqj7EUg" target="_blank">Andrés Manuel del Río, descubridor del vanadio</a></li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center py-5">
+            <p>“La naturaleza ha depositado en las entrañas de la tierra tesoros que la razón y la ciencia han de descubrir para el beneficio de la humanidad”</p>
+            <footer class="blockquote-footer">Antonio de Ulloa</footer>
+            <div class="text-center py-2 mb-5"><a id="btn-back" href="#" class="btn btn-secondary">← Volver al mapa</a></div>
+        </div>
+    </div>
+</div> 
+</div> 
+
+<footer class="bg-dark text-white py-3 text-center">
+    <p class="mb-0">© 2025 - Proyecto TFM Ingeniería Industrial | Universidad Politécnica de Madrid</p>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="zoom_img.js"></script>
+
+<script>
+(function () {
+    // Lee "from" SOLO de la URL. Si no viene, NO uses sessionStorage.
+    const params = new URLSearchParams(location.search);
+    let from = params.get('from');                 // 'gps' | 'home' | null
+
+    // Opcional: si no viene 'from', intenta inferir 'gps' solo si vienes de scan.html
+    if (!from) {
+        try {
+        const ref = document.referrer ? new URL(document.referrer) : null;
+        if (ref && ref.origin === location.origin && /\/scan\.html?$/.test(ref.pathname)) {
+            from = 'gps';
+        }
+        } catch {}
+    }
+
+    // Si AÚN no hay 'from', por defecto asume 'home'
+    if (!from) from = 'home';
+
+    // Guarda en sessionStorage SOLO si vino en la URL (para navegación interna dentro de la misma parada)
+    if (params.has('from')) {
+        sessionStorage.setItem('from_parada', from);
+    }
+
+    // Rutas de vuelta (ajusta a tu estructura real)
+    const BACK_GPS  = './gps.html';   // mapa con GPS
+    const BACK_HOME = './casa.html';      // mapa “desde casa” (o ../ruta.html)
+
+    function onBack(e) {
+        e.preventDefault();
+        if (from === 'gps') {
+        // Fuerza volver al mapa GPS (saltando scan.html)
+        window.location.assign(BACK_GPS);
+        } else {
+        // 'home' u otro → vuelve al mapa normal
+        window.location.assign(BACK_HOME);
+        }
+    }
+
+    document.getElementById('btn-back').addEventListener('click', onBack);
+})();
+</script>
+
+</body>
+</html>

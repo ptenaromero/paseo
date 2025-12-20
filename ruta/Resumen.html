@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Detalle de Parada</title>
+    <!-- Estilos Bootstrap y Leaflet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+<style>
+body {
+    font-family: 'Lato', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', serif;
+}
+.img-thumb { 
+    cursor: zoom-in; 
+}
+#imageModalImg { 
+    max-height: 75vh; object-fit: contain; 
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark ">
+    <div class="container-fluid text-white">
+        <span class="navbar-brand">Paseo Didáctico</span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegación">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="../index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="../ruta.html">La Ruta</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="/ruta/kahoot.html">Actividades</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="mailto:pedro.detena.romero@alumnos.upm.es" target="_blank">Contacto</a>
+            </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header class="position-relative d-flex align-items-center mb-4" style="min-height:320px; height:48vh; background:url('../assets/Instituto_de_sanisidro.jpg') center/cover no-repeat;">
+    <!-- overlay -->
+    <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 z-0"></div>
+    <!-- contenido -->
+    <div class="container position-relative z-1 text-white">
+    <span class="badge bg-primary-subtle text-primary"></span>
+    <h1 class="display-6 mt-2 mb-1">Resumen</h1>
+    <p class="lead-6 m-0"></p>
+    </div>
+</header>
+
+<div class="container-fluid py-3">
+<h1 class="mb-4 px-5">Reales Estudios de San Isidro</h1>
+    <div class="container-fluid px-5">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a class="nav-link text-secondary" href="casa.html">Mapa</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Resumen</li>
+        </ol>
+    </nav>
+    <p>
+        En esta primera versión adaptada de la ruta didáctica a cerca de la Ilustración y el descubirmiento de 3 elementos químicos españoles como son el Platino(Pt), el Wolframio(W) y el
+        Vanadio(V), se propone como "parada final de síntesis" el actual Instituto San Isidro. Una de las grandes instituciones de Madrid, en lo que al ámbito académico se refiere.
+    </p>
+    </div>
+
+    <div class="row px-5 py-2">
+        <div class="col-lg-8">
+            <p> El actual Instituto de San Isidro ha sido heredero de los Estudios de la Villa (1346), del Colegio Imperial (1603), y de los Reales Estudios
+            de San Isidro (1625), se trata del centro educativo más antiguo de Madrid y posiblemente de España, centro donde estudió Andrés Manuel del Río. En su patio o en alguno de sus 
+            espacios históricos, se invita al lector a reconstruir la narración de la ruta y a relacionar personas, lugares y elementos. El propio instituto se presenta como ejemplo de 
+            institución cultural de gran relevancia durante el período de la Ilustración, se trató de un centro pensado para formar élites bien educadas, capaces de servir a la Corona, 
+            administrar el Imperio y participar en proyectos científicos y técnicos que conectaban Madrid con la América española.
+            </p>
+        </div>
+        <div class="col-lg-2 d-flex justify-content-center">
+        <div class="d-flex justify-content-center align-items-start gap-3 flex-wrap">
+            <figure class="figure text-center m-0">
+            <img src="../assets/Instituto_de_sanisidro.jpg" class="img-fluid img-thumb" style="max-width:240px; height: 170px;" alt="Ricardo Velázquez Bosco" data-bs-toggle="modal" data-bs-target="#imageModal">
+            <figcaption class="figure-caption text-muted">Fig. 1. Actual Istituto de San Isidro</figcaption>
+            </figure>
+        </div>
+        </div>
+        <div class="col-lg-2 d-flex justify-content-center">
+        <div class="d-flex justify-content-center align-items-start gap-3 flex-wrap">
+            <figure class="figure text-center m-0">
+            <img src="../assets/instituto_sanisi_patio.jpg" class="img-fluid img-thumb" style="max-width:240px; height: 170px; " alt="Ricardo Velázquez Bosco" data-bs-toggle="modal" data-bs-target="#imageModal">
+            <figcaption class="figure-caption text-muted">Fig. 2. Patio del Instituto de San Isidro</figcaption>
+            </figure>
+        </div>
+        </div>
+    </div>
+    
+    <div class="row px-5 py-2">
+        <h2 class="mt-3 mb-4">Paradas del paseo didáctico</h2>
+        <div class="col-lg-9">
+        <p>
+            Repasando brevemente la aportación de cada parada a la historia y descubrimiento de los tres elementos químicos, encontramos como los restos de la Real Fábrica de Porcelana del Buen Retiro y el Real Observatorio 
+            ilustran el contexto reformista borbónico y la creación de nuevas infraestructuras científicas y técnicas. El Real Jardín Botánico y el proyecto original del Museo del Prado 
+            como Real Gabinete de Historia Natural muestran cómo se organizaron colecciones, expediciones y clasificaciones, muchas de ellas directamente relacionadas con recursos, plantas 
+            y minerales procedentes de los virreinatos americanos. El Palacio de Fomento y la Casa de la Platina permiten abordar la figura de Antonio de Ulloa y los primeros estudios y 
+            usos del platino; la zona cercana del Palacio de las Cortes recuerda a Fausto de Elhuyar y el descubrimiento del wolframio. Por último, la casa natal de Andrés Manuel del Río, 
+            junto con la referencia a sus estudios en San Isidro y a su posterior labor en el Real Seminario de Minería de México, cierra el círculo con el vanadio y con los fuertes lazos 
+            académicos y profesionales entre Madrid y la Nueva España.
+        </p>
+        <p class="py-2">
+            Para ayudar al visitante a visualizar estas conexiones, en esta parada final se muestra una imagen (Figura 3) con los tres elementos y sus descubridores, además de un diagrama conceptual sencillo. En el centro se sitúan los tres elementos 
+            (platino, wolframio y vanadio), conectados mediante flechas con los personajes clave (Ulloa, los hermanos Elhuyar, del Río), las principales instituciones madrileñas visitadas en la 
+            ruta, así como los principales espacios americanos implicados. Este esquema permite subrayar el impacto global de estos descubrimientos, desde el uso posterior de estos metales en la industria y la 
+            tecnología hasta su papel en la consolidación de la tabla periódica y resaltar el carácter esencialmente transatlántico y de mayor globalización de la Ilustración española, en la que ideas, personas, 
+            muestras e instrumentos circularon de forma continua entre Madrid y América.
+        </p>
+        </div>
+        <div class="col-lg-3 d-flex justify-content-center">
+        <div class="d-flex justify-content-center align-items-start gap-3 flex-wrap py-2">
+            <figure class="figure text-center m-0">
+            <img src="../assets/elementosquim.jpg" class="img-fluid img-thumb" style="max-width:300px; height: 200px; " alt="Ricardo Velázquez Bosco" data-bs-toggle="modal" data-bs-target="#imageModal">
+            <figcaption class="figure-caption text-muted">Fig. 3. Elementos químicos y descubirdores</figcaption>
+            </figure>
+        </div>
+        </div>
+        
+    </div>
+</div>
+
+<div class="container ">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <svg class="img-fluid mx-auto d-block" viewBox="0 0 1260 700" xmlns="http://www.w3.org/2000/svg">
+                <style>
+                    .title { font: 700 22px "Segoe UI", Arial, sans-serif; fill:#ffffff; }
+                    .subtitle { font: 600 18px "Segoe UI", Arial, sans-serif; fill:#0f6a8c; }
+                    .text { font: 400 15px "Segoe UI", Arial, sans-serif; fill:#333333; }
+                    .small { font: 400 14px "Segoe UI", Arial, sans-serif; fill:#333333; }
+                    .badge { font: 600 14px "Segoe UI", Arial, sans-serif; fill:#ffffff; }
+                </style>
+
+                <!-- Caja central: elementos -->
+                <rect x="350" y="220" width="500" height="130" rx="14" ry="14" fill="#f5f7fa" stroke="#0f6a8c" stroke-width="2"/>
+                <text x="600" y="255" text-anchor="middle" class="subtitle">Elementos químicos descubiertos</text>
+                <text x="600" y="285" text-anchor="middle" class="text">Platino (Pt) · Wolframio (W) · Vanadio (V)</text>
+                <text x="600" y="315" text-anchor="middle" class="small">Descubiertos gracias a la Ilustración y a la gran red de personas e instituciones.</text>
+
+                <!-- Caja superior: personas clave -->
+                <rect x="260" y="90" width="680" height="100" rx="14" ry="14" fill="#ffffff" stroke="#d0d4da" stroke-width="1.5"/>
+                <text x="600" y="120" text-anchor="middle" class="subtitle">Personas clave</text>
+                <text x="600" y="150" text-anchor="middle" class="text">
+                    <tspan x="600" dy="0">Antonio de Ulloa · Hermanos Elhuyar · Andrés Manuel del Río</tspan>
+                </text>
+
+                <!-- Caja izquierda: instituciones en Madrid -->
+                <rect x="10" y="220" width="320" height="220" rx="14" ry="14" fill="#ffffff" stroke="#d0d4da" stroke-width="1.5"/>
+                <text x="170" y="250" text-anchor="middle" class="subtitle">Instituciones en Madrid</text>
+                <text x="105" y="280" class="small">
+                <tspan x="35" dy="0">• Real Observatorio</tspan>
+                <tspan x="35" dy="22">• Real Jardín Botánico</tspan>
+                <tspan x="35" dy="22">• Gabinete de Historia Natural / Prado</tspan>
+                <tspan x="35" dy="22">• Casa de la Platina</tspan>
+                <tspan x="35" dy="22">• Palacio de las Cortes</tspan>
+                <tspan x="35" dy="22">• Reales Estudios de San Isidro</tspan>
+                </text>
+
+                <!-- Caja derecha: espacios en América -->
+                <rect x="870" y="220" width="320" height="220" rx="14" ry="14" fill="#ffffff" stroke="#d0d4da" stroke-width="1.5"/>
+                <text x="1030" y="250" text-anchor="middle" class="subtitle">Espacios en América</text>
+                <text x="820" y="280" class="small">
+                    <tspan x="890" dy="0">• Minas y expediciones en Nueva Granada</tspan>
+                    <tspan x="890" dy="22">  y Nueva España, como la misión geodésica.</tspan>
+                    <tspan x="890" dy="22">• Colegio de Minería (1792)</tspan>
+                    <tspan x="890" dy="22">• Palacio de Minería (Ciudad de México, 1813)</tspan>
+                </text>
+
+                <!-- Caja inferior: impacto global -->
+                <rect x="200" y="470" width="800" height="160" rx="14" ry="14" fill="#1f2429" stroke="#1f2429" stroke-width="1.5"/>
+                <text x="600" y="505" text-anchor="middle" class="badge">Impacto global</text>
+                <text x="230" y="535" class="small" fill="#f5f7fa">
+                    <tspan x="230" dy="0" class="badge">• Avance de la química y consolidación de la tabla periódica.</tspan>
+                    <tspan x="230" dy="24" class="badge">• Nuevos usos industriales y tecnológicos de Pt, W y V.</tspan>
+                    <tspan x="230" dy="24" class="badge">• Intercambio de ideas, personas, minerales e instrumentos de manera globalizada.</tspan>
+                </text>
+
+            <!-- Flechas -->
+            <line x1="600" y1="190" x2="600" y2="220" stroke="#0f6a8c" stroke-width="2" marker-end="url(#arrow)" />
+            <line x1="600" y1="350" x2="600" y2="470" stroke="#0f6a8c" stroke-width="2" marker-end="url(#arrow)" />
+
+            <!-- Definición de la punta de flecha -->
+            <defs>
+                <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+                <path d="M0,0 L0,6 L6,3 z" fill="#0f6a8c" />
+                </marker>
+            </defs>
+            </svg>
+        </div>
+    </div>
+</div>
+
+<div class="text-center my-4">
+    <p>Finalmente se pone a disposición un Kahoot para poder comprobar los contenidos aprendidos a lo largo del paseo didáctico</p>
+    <a href="../ruta/kahoot.html" target="_blank" class="btn btn-primary"> Jugar al Kahoot del paseo </a>
+</div>
+<!-- Footer -->
+<footer class="bg-dark text-white py-3 text-center">
+    <p class="mb-0">© 2025 - Proyecto TFM Ingeniería Industrial | Universidad Politécnica de Madrid</p>
+</footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+</body>
+</html>

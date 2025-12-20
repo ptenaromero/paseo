@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Detalle de Parada</title>
+    <!-- Estilos Bootstrap y Leaflet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+<style>
+body {
+    font-family: 'Lato', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', serif;
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark ">
+    <div class="container-fluid text-white">
+        <span class="navbar-brand">Paseo Didáctico</span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegación">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="../index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="../ruta.html">La Ruta</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="/ruta/kahoot.html">Actividades</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="mailto:pedro.detena.romero@alumnos.upm.es" target="_blank">Contacto</a>
+            </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header class="position-relative d-flex align-items-center mb-4" style="min-height:320px; height:48vh; background:url('../assets/parada5/Museo_del_Prado.jpg') center/cover no-repeat;">
+    <!-- overlay -->
+    <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 z-0"></div>
+    <!-- contenido -->
+    <div class="container position-relative z-1 text-white">
+<!-- <span class="badge bg-primary-subtle text-primary">Parada</span> -->
+    <h1 class="display-6 mt-2 mb-1">Museo del Prado</h1>
+    <p class="lead-6 m-0">De Gabinete de Historia Natural a museo nacional</p>
+    </div>
+</header>
+
+<div class="container-fluid py-3">
+<h1 class="mb-4 px-5">Museo del Prado</h1>
+
+<div class="row">
+    <div class="container-fluid px-5">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a class="nav-link text-secondary" href="casa.html">Mapa</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Museo del Prado</li>
+        </ol>
+    </nav>
+    </div>
+
+    <div class="col-lg-5 px-5">
+        <div class="d-flex mb-3mb-3">
+                <figure class="figure text-center m-0">
+                <img src="../assets/parada5/puerta antigua.jpg" allowfullscreen loading="lazy" >
+                <!--<source src="../audio/retiro.mp3" type="audio/mpeg">-->
+                <figcaption class="figure-caption text-muted">Fig 1. Ilustración fachada norte</figcaption>
+                </figure>
+        </div>
+    </div>
+
+    <div class="col-lg-7 px-5">
+        <p>
+            El Museo del Prado tiene una relación estrecha con la Ilustración española, ya que su concepción y fundación se enmarcan en los ideales de este movimiento.
+        </p>
+
+        <p>
+            El edificio que alberga el museo fue inicialmente concebido por el conde de Floridablanca, bajo el reinado de Carlos III, como el Real Gabinete de Historia 
+            Natural, como parte de una serie de instituciones científicas pensadas según la nueva mentalidad de la Ilustración para la reurbanización del Paseo del Prado.
+            Este proyecto, aprobado por Carlos III en 1786, fue encargado a su arquitecto predilecto, Juan de Villanueva, y formaba parte de un conjunto conocido como la Colina de 
+            las Ciencias, junto con el Real Jardín Botánico y el Real Observatorio Astronómico.
+        </p>
+        <p>    
+            Aunque el proyecto original era para una institución científica, el germen del museo se remonta a esta época, cuando ya se estaba consolidando la idea de que las 
+            colecciones artísticas y científicas debían estar al servicio del conocimiento público. El edificio fue devastado durante la invasión napoleónica, usado como cuartel 
+            militar para las tropas invasoras. Siendo posteriormente inaugurado en 1819 (a petición de Fernando VII y su mujer Isabel de Braganza) como Museo Real de Pinturas ( siguiendo así el
+            modelo del Louvre).
+        </p>
+        <p>
+            En la Fig.1 se puede observar una representación de la fachada norte original del Museo del Prado pintada por Ferdinando Brambilla. Además, en la Fig.2. podemos tambíen observar los planos
+            que incluyen la planta, el alzado y el perfil del Museo utilizados durante la dirección y construcción por Juan de Villanueva. 
+            
+        </p>
+        <button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#modalPlanos">Figura 2</button>
+    </div>
+
+
+    <div class="py-5">
+        <h2 class="mt-3 mb-3 px-5">Qué ver </h2>
+        <p class="px-5">
+            El Museo del Prado cuenta con más de 8600 cuadros y 700 esculturas, por lo que más allá de la relación existente con la ruta y la Ilustración española, hay una amplia variedad de obras y cuadros
+            que son de gran interés nacional y siempre merece la pena visitar. Por mencionar un par de ellas, encontramos obras como "Las Meninas" de Diego Velázquez (1656) en la Fig.3. Considerada una de las 
+            obras más grandes del Prado y una de las más famosas del arte mundial, muestra a la infanta Margarita Teresa rodeada de sus doncellas, con el pintor Velázquez retratándose a sí mismo y 
+            reflejándose en un espejo junto al rey Felipe IV y su esposa. Dicha obra se puede encontrar en la Sala 12. También encontramos El 3 de mayo en Madrid o los fusilamientos de Goya (1814) de la Fig.4. 
+            Una obra conmemorativa .
+        </p>
+        <p class="px-5">
+            Si hablamos de la Ilustración hemos de mencionar a Goya, pintor de dicha época. Desde 1789 como pintor de Cámara, retrató a la monarquía borbónica y a los ilustrados de su tiempo (Jovellanos, Godoy, Moratín) con una mirada psicológica y crítica. 
+            En el Prado pueden verse obras de corte como "La familia de Carlos IV", pero también su vertiente ilustrada y reformista: "Los Caprichos" (1799), donde “la razón” combate la superstición, y los lienzos 
+            de 1808–1814 con "El 3 de mayo en Madrid, Los fusilamientos", mostrada en la Fig.4, obra conmemorativa del levantamiento madrileño contra la ocupación francesa y que representa el fusilamiento de los sublevados en la montaña 
+            del Príncipe Pío, denunciando así la violencia de la guerra. Goya enlaza ciencia y crítica social con la tradición cortesana de la época.
+        </p>
+        <div class="d-flex justify-content-center align-items-start gap-5 py-5 flex-wrap">
+            <figure class="figure text-center m-0">
+                <img src="../assets/parada5/lasmeninas.jpg" style="max-width: 350px;" loading="lazy"></iframe>
+                <figcaption class="figure-caption text-muted">Fig. 3. Las Meninas de Diego Velázquez</figcaption>
+            </figure>
+            <figure class="figure text-center m-0">
+                <img src="../assets/parada5/fusilamientos_goya.jpg" style="max-width: 538px;" loading="lazy"></iframe>
+                <figcaption class="figure-caption text-muted">Fig. 4. El 3 de mayo en Madrid o los fusilamientos de Goya</figcaption>
+            </figure>
+        </div>
+    </div>
+
+
+    <div>
+        <h2 class="mb-3 px-5">Más información</h2>
+        <p class="px-5">
+        </p>
+            <div class="accordion px-5" id="infoAccordion">
+                <!-- Sitios web -->
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="headingSites">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSites">Sitios oficiales</button>
+                    </h3>
+                    <div id="collapseSites" class="accordion-collapse collapse show" data-bs-parent="#infoAccordion">
+                    <div class="accordion-body">
+                        <ul class="list-unstyled">
+                            <li>🔗 <a href="https://www.museodelprado.es/" target="_blank">Museo del Prado</a></li>
+                            <li>🔗 <a href="https://www.instagram.com/museoprado/" target="_blank"> Redes Sociales del Museo</a></li>
+                            <li>🔗 <a href="https://www.madrid.es/portales/munimadrid/es/Inicio/Cultura-ocio-y-deporte/Cultura-y-ocio/Direcciones-y-telefonos/Museo-del-Prado/?vgnextfmt=default&vgnextoid=060079262ef5d010VgnVCM1000000b205a0aRCRD&vgnextchannel=76f3efff228fe410VgnVCM2000000c205a0aRCRD" target="_blank">Cultura y Ocio, ayuntamiendo de Madrid</a></li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+                <!-- Vídeos -->
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="headingVids">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseVids">
+                        Vídeos y tours virtuales
+                        </button>
+                    </h3>
+                    <div id="collapseVids" class="accordion-collapse collapse" data-bs-parent="#infoAccordion">
+                        <div class="accordion-body">
+                        <ul class="list-unstyled">
+                            <li>🎥 <a href="https://www.youtube.com/watch?v=7lNTl2kquHA" target="_blank">Visita Virtual</a></li>
+                        </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="headingoth">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseoth">
+                        Otros recursos
+                        </button>
+                    </h3>
+                    <div id="collapseoth" class="accordion-collapse collapse" data-bs-parent="#infoAccordion">
+                        <div class="accordion-body">
+                        <ul class="list-unstyled">
+                            <li>🎥 <a href="https://www.museodelprado.es/aprende/biblioteca" target="_blank">Biblioteca digital del Museo</a></li>
+                        </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+    <div class="text-center py-5">
+        <p>“El sueño de la razón produce monstruos.”</p>
+        <footer class="blockquote-footer">Francisco de Goya</footer>
+        <div class="text-center py-2 mb-5"><a id="btn-back" href="#" class="btn btn-secondary">← Volver al mapa</a></div>
+    </div>
+    </div>
+</div>
+</div>
+
+
+<!-- Modal Fig. 3 -->
+<div class="modal fade" id="modalPlanos" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg">
+        <div class="modal-body p-0">
+            <div class="card border-0">
+            <img src="../assets/parada5/planos_prado.jpg"
+                class="card-img-top"
+                alt="Planos del Museo del Prado: planta, alzado y perfil"
+                loading="lazy">
+            <div class="card-body text-center">
+                <figcaption class="figure-caption text-muted">
+                Fig. 2. Planos del Museo del Prado (Juan de Villanueva)
+                </figcaption>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+
+<footer class="bg-dark text-white py-3 text-center">
+    <p class="mb-0">© 2025 - Proyecto TFM Ingeniería Industrial | Universidad Politécnica de Madrid</p>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+(function () {
+    // Lee "from" SOLO de la URL. Si no viene, NO uses sessionStorage.
+    const params = new URLSearchParams(location.search);
+    let from = params.get('from');                 // 'gps' | 'home' | null
+
+    // Opcional: si no viene 'from', intenta inferir 'gps' solo si vienes de scan.html
+    if (!from) {
+        try {
+        const ref = document.referrer ? new URL(document.referrer) : null;
+        if (ref && ref.origin === location.origin && /\/scan\.html?$/.test(ref.pathname)) {
+            from = 'gps';
+        }
+        } catch {}
+    }
+
+    // Si AÚN no hay 'from', por defecto asume 'home'
+    if (!from) from = 'home';
+
+    // Guarda en sessionStorage SOLO si vino en la URL (para navegación interna dentro de la misma parada)
+    if (params.has('from')) {
+        sessionStorage.setItem('from_parada', from);
+    }
+
+    // Rutas de vuelta (ajusta a tu estructura real)
+    const BACK_GPS  = './gps.html';   // mapa con GPS
+    const BACK_HOME = './casa.html';      // mapa “desde casa” (o ../ruta.html)
+
+    function onBack(e) {
+        e.preventDefault();
+        if (from === 'gps') {
+        // Fuerza volver al mapa GPS (saltando scan.html)
+        window.location.assign(BACK_GPS);
+        } else {
+        // 'home' u otro → vuelve al mapa normal
+        window.location.assign(BACK_HOME);
+        }
+    }
+
+    document.getElementById('btn-back').addEventListener('click', onBack);
+})();
+</script>
+
+</body>
+</html>

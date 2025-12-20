@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Detalle de Parada</title>
+    <!-- Estilos Bootstrap y Leaflet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+<style>
+body {
+    font-family: 'Lato', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', serif;
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark ">
+    <div class="container-fluid text-white">
+        <span class="navbar-brand">Paseo Didáctico</span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegación">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="../index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="../ruta.html">La Ruta</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="/ruta/kahoot.html">Actividades</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="mailto:pedro.detena.romero@alumnos.upm.es" target="_blank">Contacto</a>
+            </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!--
+<div>
+    <h2 class="mt-1 mb-3 px-5 g-0"></h2>
+    <div class="row align-items-stretch mb-4 px-5">
+    <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 d-flex flex-column">
+    <img src="../assets/parada3/Palacio-de-Fomento-2.jpg" class="flex-fill w-100 shadow-1-strong rounded mb-4 " alt=""/>
+    <img src="../assets/parada3/palaciodefomento0083.jpg" class="flex-fill w-100 shadow-1-strong rounded mt-auto " alt=""/>
+    </div>
+
+    <div class="col-lg-4 mb-4 mb-lg-0 d-flex flex-column">
+    <img src="../assets/parada3/pfomento2.jpg" class="flex-fill w-100 shadow-1-strong rounded mb-4" alt=""/>
+
+    <img src="../assets/parada3/Ministerio.jpg" class="flex-fill w-100 shadow-1-strong rounded " alt=""/>
+    </div>
+
+    <div class="col-lg-4 mb-4 mb-lg-0 d-flex flex-column">
+    <img src="../assets/parada3/pfomentomod.jpg" class="flex-fill w-100 shadow-1-strong rounded mb-4 " alt=""/>
+
+    <img src="../assets/parada3/cabecera_visitas.jpg" class="flex-fill w-100 shadow-1-strong rounded " alt=""/>
+    </div>
+</div>
+</div>
+!-->
+
+<div class="container-fluid py-5">
+<h1 class="mb-4 px-5">Palacio de fomento - Ministerio de agricultura, pesca y alimentación</h1>
+
+
+<div class="row">
+<div class="container-fluid px-5">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a class="nav-link text-secondary" href="casa.html">Mapa</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Palacio de fomento</li>
+        </ol>
+    </nav>
+</div>
+<div class="col-lg-8 px-5">
+        <p>
+            El palacio de fomento, edificio de la ciudad de Madrid, situado en la plaza del emperador Carlos V fue diseñado por el arquiteco Ricardo Velázquez Bosco mostrado en la figura 1.
+            En otra de las rutas creadas por la Universidad, se muestra más información a cerca de éste arquitecto. Este edificio, inicialmente proyectado como Escuela de Artes y Oficios y Facultad de Ciencias,
+            sobre los terrenos del Real Jardín Botánico, ha servido como sede de varios ministerios como Obras Públicas, Instrucción Pública y Bellas Artes, y actualmente alberga el
+            Ministerio de Agricultura.
+        </p>
+        <p>
+            Aunque el edficio es posterior al periodo de la Ilustración y encaja mejor con el contenido de segunda ruta diseñada por la Universidad, se emplea para hablar tanto de la vida como de la obra de 
+            Antonio de Ulloa, gracias a la estatua que le dedica José Alcoverro en la fachada principal del edificio, véase en la figura 2. 
+        </p>
+        <p>
+            Antonio de Ulloa y de la Torre Guiral nació en Sevilla en el año 1716. En 1733 ingresó en la Real Academia de Guardias Marinas (Cádiz), y entre 1735 y 1734, fue partícipe junto a José 
+            Juan, de la Misión Geodésica Francesa (organizada por la Académie Royale des Sciences de París), una de las expediciones científicas más emblemáticas por el actual Perú, con el objetivo de 
+            medir la longitud de un meridiano. Además, en el viaje de regreso fue apresado por corsarios y llevado prisionero a Inglaterra. Fue en el transcurso de dicha expedición que intuyó que la platina, una "impureza" del oro y la plata encontrada en las minas, se trataba de un nuevo metal y, 
+            consecuentemente de un nuevo elemento nuevo elemento químico, el único de etimología española: el Platino(Pt).
+        </p>
+</div>
+    <div class="col-lg-4 d-flex justify-content-center">
+    <div class="d-flex justify-content-center align-items-start gap-3 flex-wrap">
+        <figure class="figure text-center m-0">
+        <img src="../assets/Ricardo_Velázquez_Bosco.jpg" class="img-fluid" style="max-width:150px; max-height: 220px;" alt="Ricardo Velázquez Bosco">
+        <figcaption class="figure-caption text-muted">Fig. 1. Ricardo Velázquez Bosco</figcaption>
+        </figure>
+
+        <figure class="figure text-center m-0">
+        <img src="../assets/Antonio_de_Ulloa_por_José_Alcoverro_(Madrid)_02.jpg" class="img-fluid" style="max-width:150px; max-height: 220px;" alt="Otra imagen">
+        <figcaption class="figure-caption text-muted">Fig. 2. Antonio de Ulloa</figcaption>
+        </figure>
+    </div>
+    </div>
+</div>
+
+<div class="container-fluid py-3">
+    <div class="row align-items-start g-4">
+        <!-- Imagen a la izquierda -->
+        <div class="col-12 col-lg-3">
+            <figure class="figure d-flex flex-column align-items-center m-0">
+            <img src="../assets/Almirante_Antonio_de_Ulloa.jpg" class="img-fluid" style="max-width:150px; max-height: 220px;" alt="Ricardo Velázquez Bosco">
+            <figcaption class="figure-caption text-muted">Fig. 3. Antonio de Ulloa</figcaption>
+            </figure>
+        </div>
+
+        <!-- Texto a la derecha -->
+        <div class="col-12 col-lg-9 ">
+        <p style="max-width:none !important;">
+            Acerca de Antonio de Ulloa, es conocido que entre 1749 y 1751 colaboró en una “comisión secreta” para varios países europeos —Francia, Países Bajos y Suecia—. 
+            Además de su carrera como oficial naval (que le llevó a ser gobernador de Huancavelica, en Perú, así como superintendente de sus minas de mercurio. Más tarde le llevó a 
+            ser gobernador del vasto territorio de Luisiana, en la actual Estados Unidos), 
+            redactó un informe sobre la limpieza de Madrid, propuso la creación de un Gabinete de Historia Natural en la ciudad y diseñó 
+            canales de navegación y riego para los Reinos de Castilla y León. Falleciendo finalmente en la Isla de León (Cádiz) en el año 1795.
+        </p>
+        <p>
+            En el tramo a continuación de la ruta, se dedica un espacio adicional a explicar la Misión Geodésica y se anima a los participantes a visitar el Museo Naval 
+            (a unos diez minutos a pie del palacio de fomento), que conserva importantes
+            vestigios relacionados con lo tratado en este recorrido y cuya web constituye asimismo una fuente de información relevante.
+        </p>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid py-3">
+    <h2 class="px-5">La misión geodésica</h2>
+    <div class="row">
+        <div class="col-lg-8 py-3 px-5">
+            <p>
+                A comienzos del siglo XVIII existía una viva polémica sobre la forma de la Tierra. Isaac Newton, en sus Principia (1687), defendía un elipsoide oblato —achatado por los polos—, 
+                mientras que la tradición cartesiana proponía un elipsoide prolato —alargado—. Para zanjar la cuestión, la Académie Royale des Sciences organizó dos expediciones que midieron la 
+                longitud de un grado de meridiano en latitudes extremas: una a Laponia (alta latitud) y otra a la Real Audiencia de Quito (Ecuador).
+            </p>
+            <p>La expedición a Laponia estuvo encabezada por Pierre Maupertuis, con Alexis Clairaut, Charles Camus, Pierre Monnier y el sueco Anders Celsius. La del Ecuador reunió a Louis Godin, Pierre Bouguer, 
+            Charles Marie de La Condamine y al botánico Joseph de Jussieu, a los que se sumaron dos jóvenes oficiales de la Armada española: Jorge Juan (21 años) y Antonio de Ulloa (19 años). Luis XV solicitó 
+            permiso a su tío Felipe V para trabajar en dominios de la Monarquía Hispánica (Virreinato del Perú), lo que hizo de la empresa un verdadero proyecto transnacional. Durante casi una década se levantaron 
+            triangulaciones, se midieron bases con reglas y cadenas, y se observaron estrellas para fijar latitudes con precisión.
+            </p>
+        </div>
+        <div class="col-lg-4 d-flex justify-content-center">
+    <div class="d-flex justify-content-center align-items-start gap-5 flex-wrap">
+        <figure class="figure text-center m-0">
+        <img src="../assets/elipsoide_oblato.png" class="img-fluid" style="max-width:150px; max-height: 143px;" alt="Ricardo Velázquez Bosco">
+        <figcaption class="figure-caption text-muted">Fig. 4. Elipsoide Oblato</figcaption>
+        </figure>
+
+        <figure class="figure text-center m-0">
+        <img src="../assets/elipsoide_prolato.png" class="img-fluid" style="max-width:150px; max-height: 143px;" alt="Otra imagen">
+        <figcaption class="figure-caption text-muted">Fig. 5. Elipsoide Prolato</figcaption>
+        </figure>
+    </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 px-5">
+        <p>
+            El balance fue concluyente: los grados medidos en Laponia resultaron más largos que los del Ecuador, confirmando el modelo oblato de Newton. Además del debate cosmológico, las misiones impulsaron la cartografía, 
+            la astronomía práctica, la historia natural y la circulación de saberes entre Europa y América.
+        </p>
+        <p>En el transcurso de estos trabajos, Antonio de Ulloa estudió en 1735 una impureza encontrada en minas de oro del río Pinto (actual Colombia), llamada “platina” por su parecido con la plata. En 1748, en la Relación 
+            histórica del viaje a la América Meridional, la describió como nuevo metal y la introdujo en la literatura científica del siglo XVIII: su gran dureza y resistencia (difícil de romper incluso sobre yunque de acero), 
+            su peso y su comportamiento refractario hicieron de su purificación un problema de investigación. Poco después, llegaron a Inglaterra muestras de contrabando; William Brownrigg subrayó su importancia y William Watson 
+            divulgó el trabajo de Ulloa ante la Royal Society.
+        </p>
+
+        <p>
+            En 1785, Pierre François Chabaneau, junto con Fausto de Elhuyar, obtuvo el primer método eficaz de purificación del platino en el Real Seminario Patriótico de Vergara (Guipúzcoa), donde coincidió con Joseph Louis Proust. 
+            En 1787 se creó en Madrid la Casa de la Platina, que permitió a España liderar durante un tiempo la purificación y comercialización del metal; su actividad quedó interrumpida con los sucesos de 1808.
+        </p>
+
+        <p>La carrera de Ulloa continuó en la Armada —viajes, informes técnicos y propuestas para Madrid (limpieza urbana, canales de navegación e irrigación)— y culminó con su papel en la Luisiana española, conectando su biografía 
+            con el mapa del Virreinato de Nueva España y los territorios norteamericanos de fines del XVIII. Como guiño cultural actual, puede sugerirse la novela Lejos de Luisiana (Luz Gabás, Premio Planeta 2022), que recrea aquel marco histórico.
+        </p>
+        </div>
+
+    <div class="d-flex justify-content-center align-items-start gap-5 py-5 flex-wrap">
+        <figure class="figure text-center m-0">
+        <img src="../assets/imagexpedicion1.png" class="img-fluid" style="max-width:500px; max-height: 210px;" alt="">
+        <figcaption class="figure-caption text-muted">Fig. 6. Imagen Ilustrativa de la expedición</figcaption>
+        </figure>
+
+        <figure class="figure text-center m-0">
+        <img src="../assets/imagexpedicion2.png" class="img-fluid" style="max-width:500px; max-height: 210px;" alt="">
+        <figcaption class="figure-caption text-muted">Fig. 7. Imagen Ilustrativa de la expedición</figcaption>
+        </figure>
+    </div>
+    </div>
+</div>
+
+<div class="container-fluid py-1">
+    <h2 class="px-5">Museo naval</h2>
+    <div class="row">
+        <div class="col-lg py-3 px-5">
+            <p>
+            Este vídeo del Museo Naval contextualiza la Misión Geodésica como una de las grandes empresas científicas del siglo XVIII: medir con precisión un arco de meridiano en latitudes ecuatoriales para zanjar la disputa entre el modelo cartesiano y 
+            el modelo newtoniano sobre la forma terrestre. Participaron los franceses La Condamine, Godin y Bouguer y, por parte española, los jóvenes oficiales de la Armada Jorge Juan y Antonio de Ulloa, cuya formación matemática y náutica resultó clave. 
+            La pieza resume los métodos (triangulaciones, observaciones de estrellas, barómetros, péndulos), las dificultades del terreno andino y el clima político de la época. Explica, además, por qué los resultados —que confirmaron el achatamiento de los 
+            polos— cambiaron la cartografía, la navegación y la enseñanza técnica naval.
+            </p>
+            <p>
+            El vídeo también permite comprender el itinerario intelectual de Ulloa: su contacto con laboratorios y academias, la descripción del platino como nuevo metal en la literatura científica europea, y su posterior labor institucional 
+            (informes, gabinetes, museos). Para el relato del Palacio de Fomento, la figura de Ulloa enlaza la curiosidad por el territorio y los recursos naturales con la vocación pública de las instituciones científicas y técnicas del Estado.
+            </p>
+        </div>
+    </div>
+    <div class="py-4 row justify-content-center">
+    <div class="col-10 col-md-6 col-lg-4"> <!-- ajusta el ancho por breakpoints -->
+        <div class="ratio ratio-16x9">
+        <iframe src="https://www.youtube-nocookie.com/embed/_S7dGSj_vCI"
+                title="Museo Naval (YouTube)" allowfullscreen loading="lazy"></iframe>
+        </div>
+    </div>
+    </div>
+</div>
+
+<!--cambiar contenido por el propioooo-->
+<div>
+    <h2 class="mt-5 mb-3 px-5">Más información</h2>
+    <p class="px-5">
+        Como bien se menciona anteriormente, se anima a los participantes a visitar el Museo Naval ya que conserva importantes vestigios relacionados con lo tratado a lo largo del recorrido.
+    </p>
+        <div class="accordion px-5" id="infoAccordion">
+            <!-- Sitios web -->
+            <div class="accordion-item">
+                <h3 class="accordion-header" id="headingSites">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSites">Sitios oficiales</button>
+                </h3>
+                <div id="collapseSites" class="accordion-collapse collapse show" data-bs-parent="#infoAccordion">
+                <div class="accordion-body">
+                    <ul class="list-unstyled">
+                        <li>🔗 <a href="https://www.mapa.gob.es/es/ministerio/palacio-de-fomento/visitas-guiadas" target="_blank">Visitas guiadas</a></li>
+                        <li>🔗 <a href="https://www.mapa.gob.es/es/ministerio/palacio-de-fomento" target="_blank">Acerca del Palacio de Fomento</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+            </div>
+            <!-- Vídeos -->
+            <div class="accordion-item">
+                <h3 class="accordion-header" id="headingVids">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseVids">
+                    Vídeos y tours virtuales
+                    </button>
+                </h3>
+                <div id="collapseVids" class="accordion-collapse collapse" data-bs-parent="#infoAccordion">
+                    <div class="accordion-body">
+                    <ul class="list-unstyled">
+                        <li>🎥 <a href="https://www.youtube.com/watch?v=Y6iERZESg44" target="_blank">Visita al Palacio</a></li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+<div class="text-center py-5">
+    <p>“La agricultura es la primera fuente de riqueza y la base de la felicidad de los pueblos.”</p>
+    <footer class="blockquote-footer">Gaspar Melchor de Jovellanos</footer>
+    <div class="text-center py-2 mb-5"><a id="btn-back" href="#" class="btn btn-secondary">← Volver al mapa</a></div>
+</div>
+</div>
+
+</div>
+
+<footer class="bg-dark text-white py-3 text-center">
+    <p class="mb-0">© 2025 - Proyecto TFM Ingeniería Industrial | Universidad Politécnica de Madrid</p>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+(function () {
+    // Lee "from" SOLO de la URL. Si no viene, NO uses sessionStorage.
+    const params = new URLSearchParams(location.search);
+    let from = params.get('from');                 // 'gps' | 'home' | null
+
+    // Opcional: si no viene 'from', intenta inferir 'gps' solo si vienes de scan.html
+    if (!from) {
+        try {
+        const ref = document.referrer ? new URL(document.referrer) : null;
+        if (ref && ref.origin === location.origin && /\/scan\.html?$/.test(ref.pathname)) {
+            from = 'gps';
+        }
+        } catch {}
+    }
+
+    // Si AÚN no hay 'from', por defecto asume 'home'
+    if (!from) from = 'home';
+
+    // Guarda en sessionStorage SOLO si vino en la URL (para navegación interna dentro de la misma parada)
+    if (params.has('from')) {
+        sessionStorage.setItem('from_parada', from);
+    }
+
+    // Rutas de vuelta (ajusta a tu estructura real)
+    const BACK_GPS  = './gps.html';   // mapa con GPS
+    const BACK_HOME = './casa.html';      // mapa “desde casa” (o ../ruta.html)
+
+    function onBack(e) {
+        e.preventDefault();
+        if (from === 'gps') {
+        // Fuerza volver al mapa GPS (saltando scan.html)
+        window.location.assign(BACK_GPS);
+        } else {
+        // 'home' u otro → vuelve al mapa normal
+        window.location.assign(BACK_HOME);
+        }
+    }
+
+    document.getElementById('btn-back').addEventListener('click', onBack);
+})();
+</script>
+
+</body>
+</html>
