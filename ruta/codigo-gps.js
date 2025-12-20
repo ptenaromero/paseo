@@ -1,6 +1,6 @@
 // codigo-gps.js
 
-const ORS_API_KEY = "5b3ce3597851110001cf624899efc0c2c9614dbd92a4d4ee22d9074d"; // api de enrutamiento
+const ORS_PROXY_URL = "https://ors-proxy.ptenaromero.workers.dev/route";
 
 const map = L.map('map').setView([40.4115, -3.6900], 15);
 let userCoords = null;
@@ -110,7 +110,7 @@ function ensureCTA() {
 }
 ensureCTA();
 
-L.tileLayer('https://api.maptiler.com/maps/basic/256/{z}/{x}/{y}.png?key=1tfd0I7XjBQX8BJhjTX3', {
+L.tileLayer('https://api.maptiler.com/maps/basic/256/{z}/{x}/{y}.png?key=neXeQJpV7ISGxbEfvveN', {
     attribution: '&copy; <a href="https://www.maptiler.com/">MapTiler</a> contributors'
 }).addTo(map);
 
@@ -281,11 +281,10 @@ function rutaReal(destLng, destLat) {
 
     map.closePopup();
 
-    fetch(url, {
+    fetch(ORS_PROXY_URL, {
         method: "POST",
         headers: {
         "Content-Type": "application/json",
-        "Authorization": ORS_API_KEY
         },
         body: JSON.stringify(body)
     })

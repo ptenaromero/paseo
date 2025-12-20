@@ -2,7 +2,7 @@ const map = L.map('map').setView([40.4115, -3.6900], 15);
 const STORAGE_KEY = 'paradasVisitadas';
 
 // Mapa base de MapTiler en vista satélite
-L.tileLayer('https://api.maptiler.com/maps/basic/256/{z}/{x}/{y}.png?key=1tfd0I7XjBQX8BJhjTX3', {
+L.tileLayer('https://api.maptiler.com/maps/basic/256/{z}/{x}/{y}.png?key=neXeQJpV7ISGxbEfvveN', {
     attribution: '&copy; <a href="https://www.maptiler.com/">MapTiler</a> contributors'
 }).addTo(map);
 
