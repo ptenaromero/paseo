@@ -8,31 +8,31 @@ let userMarker = null;
 let currentRoute = null;
 let paradaCercana = null; // parada activa para la CTA
 
-// 🆕 centrado solo una vez
+//  centrado solo una vez
 let hasCenteredOnUser = false;
 
-// 🆕 Control robusto de CTA (distancias, TTL, cooldown global, clave estable)
+//  Control robusto de CTA (distancias, TTL, cooldown global, clave estable)
 const R_ENTER = 70;                          // entra a 70 m
 const R_EXIT  = 90;                          // sale a 90 m
 const DISMISS_TTL_MS         = 3 * 60 * 1000; // 3 min de silencio por-parada
 const CTA_GLOBAL_COOLDOWN_MS = 8000;          // 8 s de silencio global tras cerrar CTA
-let ctaMutedUntil  = 0;                       // 🆕 silencio global hasta este timestamp
-let ctaVisibleId   = null;                    // 🆕 CTA actualmente visible (clave)
-let currentCTAId   = null;                    // 🆕 clave de parada candidata actual
+let ctaMutedUntil  = 0;                       //  silencio global hasta este timestamp
+let ctaVisibleId   = null;                    //  CTA actualmente visible (clave)
+let currentCTAId   = null;                    //  clave de parada candidata actual
 
-// 🆕 Map de descartes con caducidad: key -> timestampHasta
+//  Map de descartes con caducidad: key -> timestampHasta
 const dismissedUntil = new Map();
-const keyFor = (p) => (p?.slug && p.slug.length) ? `slug:${p.slug}` : `id:${p.id}`; // 🆕 clave estable
+const keyFor = (p) => (p?.slug && p.slug.length) ? `slug:${p.slug}` : `id:${p.id}`; //  clave estable
 
-const isDismissed = (p) => {                 // 🆕
+const isDismissed = (p) => {                 // 
     const k = keyFor(p);
     const until = dismissedUntil.get(k) || 0;
     if (until > Date.now()) return true;
     if (until) dismissedUntil.delete(k); // caducó
     return false;
 };
-const dismissForTTL = (p) => dismissedUntil.set(keyFor(p), Date.now() + DISMISS_TTL_MS); // 🆕
-const clearDismiss  = (p) => dismissedUntil.delete(keyFor(p)); // 🆕
+const dismissForTTL = (p) => dismissedUntil.set(keyFor(p), Date.now() + DISMISS_TTL_MS); // 
+const clearDismiss  = (p) => dismissedUntil.delete(keyFor(p)); // 
 
 // --- progreso (lo tuyo) ---
 const progressWrapEl = document.getElementById('progress-wrapper');
@@ -100,12 +100,12 @@ function ensureCTA() {
     // 🔧 “Luego”: descarta la parada visible (TTL) y activa cooldown global + limpia estados
     document.getElementById('btn-luego').onclick = () => {
         div.classList.add('d-none');
-        const p = paradaCercana || (paradas.find(x => keyFor(x) === ctaVisibleId) || null); // 🆕
-        if (p) dismissForTTL(p);                   // 🆕 silencio por-parada (TTL)
-        ctaMutedUntil = Date.now() + CTA_GLOBAL_COOLDOWN_MS; // 🆕 silencio global corto
-        ctaVisibleId  = null;                      // 🆕 evita re-render
-        currentCTAId  = null;                      // 🆕
-        paradaCercana = null;                      // 🆕
+        const p = paradaCercana || (paradas.find(x => keyFor(x) === ctaVisibleId) || null); // 
+        if (p) dismissForTTL(p);                   //  silencio por-parada (TTL)
+        ctaMutedUntil = Date.now() + CTA_GLOBAL_COOLDOWN_MS; //  silencio global corto
+        ctaVisibleId  = null;                      //  evita re-render
+        currentCTAId  = null;                      // 
+        paradaCercana = null;                      // 
     };
 }
 ensureCTA();
@@ -142,7 +142,7 @@ if (navigator.geolocation) {
         const lng = -3.6901;
         userCoords = [lng, lat]; // ORS usa [lng, lat] (GeoJSON)
 
-        // 🆕 centrar solo una vez
+        //  centrar solo una vez
         if (!hasCenteredOnUser) {
         map.setView([lat, lng], 16);
         hasCenteredOnUser = true;
@@ -161,12 +161,12 @@ if (navigator.geolocation) {
         userMarker.setLatLng([lat, lng]);
         }
 
-        // 🆕 Si hay silencio global activo, NO recalcular CTA este tick
+        //  Si hay silencio global activo, NO recalcular CTA este tick
         if (Date.now() < ctaMutedUntil) {
         paradaCercana = null;
         currentCTAId  = null;
         updateCTA();
-        return; // 🆕 corta aquí para evitar que se rearme la CTA inmediatamente
+        return; // corta aquí para evitar que se rearme la CTA inmediatamente
         }
 
         // Detectar proximidad y decidir CTA
@@ -182,7 +182,7 @@ if (navigator.geolocation) {
             p.mostrado = true;
         } else if (dist > R_EXIT && p.mostrado) {
             p.mostrado = false;
-            clearDismiss(p); // 🆕 al salir del área, olvidar descarte para reofrecer más tarde
+            clearDismiss(p); // al salir del área, olvidar descarte para reofrecer más tarde
         }
 
         // Candidata CTA: dentro de R_ENTER, no descartada por TTL y más cercana
@@ -195,7 +195,7 @@ if (navigator.geolocation) {
         // Fija la parada activa + clave estable
         if (masCercana) {
         paradaCercana = masCercana;
-        currentCTAId  = keyFor(masCercana); // 🆕 clave estable (slug o id)
+        currentCTAId  = keyFor(masCercana); // clave estable (slug o id)
         } else {
         paradaCercana = null;
         currentCTAId  = null;
@@ -251,7 +251,7 @@ fetch('puntos.json')
         // 🔧 Guardamos slug e id para clave estable de CTA
         paradas.push({
             id: index,
-            slug: p.slug,           // 🆕 importante para keyFor()
+            slug: p.slug,           // importante para keyFor()
             nombre: p.nombre,
             lat: p.lat,
             lng: p.lng,
