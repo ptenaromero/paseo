@@ -47,6 +47,11 @@ h1, h2, h3, h4, h5, h6 {
 <div class="container-fluid py-5" id="div1porce">
 
 <div class="px-5">
+    <div class="px-5 mb-3">
+        <button id="btn-tts" type="button" class="btn btn-outline-primary btn-sm" aria-pressed="false">
+            Escuchar
+        </button>
+    </div>
 <h1 class="mb-4">Parque del Retiro – Fábrica de Porcelana del Buen Retiro</h1>
 
 <div class="row">
@@ -58,7 +63,7 @@ h1, h2, h3, h4, h5, h6 {
         </ol>
     </nav>
 </div>
-<div class="col-lg-8">
+<div id="contenido-parada" class="col-lg-8">
 <!--poner el col-lg-8 aqui y descomentar lo anterior para mapa a altura de texto-->
         <p class="text-justify">
         En pleno corazón del Retiro, se encuentran los vestigios de una de las joyas industriales del siglo XVIII: la Fábrica de Porcelana del Buen Retiro, también conocida como “La China”.
@@ -205,6 +210,9 @@ h1, h2, h3, h4, h5, h6 {
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+<script src="./tts-parada.js"></script>
+
+
 <script>
 (function () {
     const viewport = document.querySelector('.slider-window');
@@ -279,6 +287,24 @@ h1, h2, h3, h4, h5, h6 {
 
     // Si AÚN no hay 'from', por defecto asume 'home'
     if (!from) from = 'home';
+
+    
+    //  TTS solo si vienes desde GPS 
+    const enableTTS = (from === 'gps');
+    const ttsBtn = document.getElementById('btn-tts');
+
+    if (!enableTTS) {
+    // Si no vienes de GPS, lo quitamos 
+    ttsBtn?.remove();
+    } else {
+    // Inicializa lectura opcional del contenido
+    window.initParadaTTS?.({
+        buttonSelector: "#btn-tts",
+        contentSelector: "#contenido-parada",
+        lang: "es-ES",
+        rate: 1
+    });
+    }
 
     // Guarda en sessionStorage SOLO si vino en la URL (para navegación interna dentro de la misma parada)
     if (params.has('from')) {

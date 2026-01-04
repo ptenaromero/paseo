@@ -57,6 +57,11 @@ h1, h2, h3, h4, h5, h6 {
 </header>
 
 <div class="container-fluid py-3">
+    <div class="px-5 mb-3">
+        <button id="btn-tts" type="button" class="btn btn-outline-primary btn-sm" aria-pressed="false">
+            Escuchar
+        </button>
+    </div>
 <h1 class="mb-4 px-5">Museo del Prado</h1>
 
 <div class="row">
@@ -79,7 +84,7 @@ h1, h2, h3, h4, h5, h6 {
         </div>
     </div>
 
-    <div class="col-lg-7 px-5">
+    <div id="contenido-parada" class="col-lg-7 px-5">
         <p>
             El Museo del Prado tiene una relación estrecha con la Ilustración española, ya que su concepción y fundación se enmarcan en los ideales de este movimiento.
         </p>
@@ -223,6 +228,8 @@ h1, h2, h3, h4, h5, h6 {
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="./tts-parada.js"></script>
+
 
 <script>
 (function () {
@@ -242,6 +249,24 @@ h1, h2, h3, h4, h5, h6 {
 
     // Si AÚN no hay 'from', por defecto asume 'home'
     if (!from) from = 'home';
+
+    
+    //  TTS solo si vienes desde GPS 
+    const enableTTS = (from === 'gps');
+    const ttsBtn = document.getElementById('btn-tts');
+
+    if (!enableTTS) {
+    // Si no vienes de GPS, lo quitamos 
+    ttsBtn?.remove();
+    } else {
+    // Inicializa lectura opcional del contenido
+    window.initParadaTTS?.({
+        buttonSelector: "#btn-tts",
+        contentSelector: "#contenido-parada",
+        lang: "es-ES",
+        rate: 1
+    });
+    }
 
     // Guarda en sessionStorage SOLO si vino en la URL (para navegación interna dentro de la misma parada)
     if (params.has('from')) {

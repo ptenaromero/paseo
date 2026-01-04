@@ -52,19 +52,19 @@
     </a-scene>
 
 <script>
-    // ===== Config =====
+    //  Config 
     const DEFAULT_URL = null;
     const HOLD_MS = 700;
     const SHOW_FALLBACK_MS = 10000;
 
-    // ===== Parámetros =====
+    //  Parámetros 
     const params = new URLSearchParams(location.search);
     const scopeGlobal = params.get("scope") || DEFAULT_URL;
     const onlyParam = params.get("only");
     const only = (onlyParam === null || onlyParam === '') ? null : Number(onlyParam);
 
-    // 🆕 LEE EL ORIGEN Y PROPÁGALO
-    const from = params.get("from") || ""; // <-- 🆕
+    // LEE EL ORIGEN Y LO PROPAGA
+    const from = params.get("from") || ""; // <-- 
 
     // URLs por índice: ?scope0=...&scope1=...&...&scope7=...
     const scopeByIndex = {};
@@ -78,20 +78,20 @@
         4: "Parada 4", 5: "Parada 5", 6: "Parada 6", 7: "Parada 7"
     };
 
-    // ===== Estado =====
+    //  Estado 
     let holdTimer = null;
     let fallbackTimer = null;
     let detected = false;
     let redirected = false;
 
-    // ===== Utils =====
+    //  Utils 
     const $ = (sel) => document.querySelector(sel);
     const toRel = (p) => p ? ((/^https?:\/\//.test(p) || p.startsWith('/')) ? p : `./${p}`) : null;
 
-    // 🆕 compone una URL destino asegurando que arrastra ?from=...
-    function withFrom(dest) {                       // 🆕
+    //  compone una URL destino asegurando que arrastra ?from=...
+    function withFrom(dest) {                       
         const u = new URL(dest, location.href);
-        if (from) u.searchParams.set('from', from);   // adjunta/actualiza from
+        if (from) u.searchParams.set('from', from);   
         return u.pathname + u.search + u.hash;
     }
 
@@ -128,12 +128,12 @@
         showToast("Reconocido: abriendo contenido…");
         holdTimer = setTimeout(() => {
             stopCameraAndScene();
-            // 🆕 usa withFrom() para mantener el origen
-            window.location.assign(withFrom(dest));   // 🆕
+            //  usa withFrom() para mantener el origen
+            window.location.assign(withFrom(dest));   
         }, HOLD_MS);
     }
 
-    // ===== Fallback =====
+    // Fallback 
     function setupFallback(){
         const fb = $("#fallback");
         const menu = $("#fallbackMenu");
@@ -143,10 +143,10 @@
         if (scopeGlobal) {
             const dest = toRel(scopeGlobal);
         if (dest) {
-            // 🆕 respetar 'from' en el fallback
-            const href = withFrom(dest);                            // 🆕
-            fb.href = href;                                         // 🆕
-            fb.onclick = (e)=>{ e.preventDefault(); window.location.assign(href); }; // 🆕
+            //  respetar 'from' en el fallback
+            const href = withFrom(dest);                            
+            fb.href = href;                                         
+            fb.onclick = (e)=>{ e.preventDefault(); window.location.assign(href); }; 
             fallbackTimer = setTimeout(() => {
                 if (!detected) fb.style.display = 'inline-block';
             }, SHOW_FALLBACK_MS);
@@ -160,8 +160,8 @@
             .sort(([a],[b]) => Number(a) - Number(b))
             .map(([idx, url]) => {
                 const nice = labelsByIndex[idx] ?? `Target ${idx}`;
-                // 🆕 precompón href con 'from'
-                const href = withFrom(toRel(url));                    // 🆕
+                
+                const href = withFrom(toRel(url));                    
                 return `<a href="${href}" data-idx="${idx}">${nice}</a>`;
             }).join("");
         if (items) {
@@ -196,7 +196,7 @@
             clearTimeout(fallbackTimer);
             $("#fallback").style.display = 'none';
             $("#fallbackMenu").style.display = 'none';
-            scheduleRedirect(dest); // dentro ya añade ?from=...
+            scheduleRedirect(dest); // dentro ya se añade ?from=...
             });
 
             el.addEventListener('targetLost', onLost);

@@ -52,6 +52,11 @@ h1, h2, h3, h4, h5, h6 {
     <!-- Contenido encima del overlay -->
     <div class="position-relative px-3">
         <h1 class="display-4">Jardín Botánico</h1>
+        <div class="px-5 mb-3">
+        <button id="btn-tts" type="button" class="btn btn-outline-primary btn-sm" aria-pressed="false">
+            Escuchar
+        </button>
+        </div>
         <p class="lead"> Real Jardín Botánico Alfonso XII</p>
     </div>
     <div class="col-lg-4 d-flex justify-content-lg-center justify-content-center align-items-start">
@@ -100,7 +105,7 @@ h1, h2, h3, h4, h5, h6 {
     </ol>
 </nav>
 </div>
-    <div class="col-lg-8 px-5">
+    <div id="contenido-parada" class="col-lg-8 px-5">
         <p>
             El Real Jardín Botánico se estableció inicialmente a orillas del río Manzanares en 1755, por iniciativa de Fernando VI, en la zona donde hoy se encuentra la Puerta de Hierro, mostrada en el mapa
             de la figura 1. 
@@ -119,7 +124,7 @@ h1, h2, h3, h4, h5, h6 {
         </p>
     </div>
     <div class="col-lg-4 px-5">
-    <div class="row g-3">
+    <div data-tts="exclude" class="row g-3">
         <!-- MAPA -->
         <div class="col-6">
         <figure class="figure w-100 m-0">
@@ -140,7 +145,7 @@ h1, h2, h3, h4, h5, h6 {
 
         <!-- IMAGEN -->
         <div class="col-6">
-        <figure class="figure w-100 m-0">
+        <figure data-tts="exclude" class="figure w-100 m-0">
             <img
             src="../assets/parada4/jardin_botanico_entrada.jpg"
             alt="Entrada del Jardín Botánico"
@@ -162,7 +167,7 @@ h1, h2, h3, h4, h5, h6 {
     </div>
 </div>
 
-<section class="container-fluid px-5 my-5">
+<section data-tts="exclude" class="container-fluid px-5 my-5">
     <h2 class="mb-3">Galería</h2>
     <p>
         Se muestran algunas imágenes pertenecientes al Jardín Botánico ya que son múltiples las fuentes existentes y con una gran variedad dependiendo de la estación del año
@@ -199,7 +204,7 @@ h1, h2, h3, h4, h5, h6 {
     <p class="px-5">
         Se anima a los participantes a visitar el Jardín Botánico ya que se trata de una experiencia única para todo amante de la naturaleza. Además, cuenta con un gran descuento para estudiantes.
     </p>
-        <div class="accordion px-5" id="infoAccordion">
+        <div data-tts="exclude" class="accordion px-5" id="infoAccordion">
             <!-- Sitios web -->
             <div class="accordion-item">
                 <h3 class="accordion-header" id="headingSites">
@@ -247,6 +252,8 @@ h1, h2, h3, h4, h5, h6 {
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="./tts-parada.js"></script>
 
 <script>
 (function () {
@@ -322,6 +329,26 @@ h1, h2, h3, h4, h5, h6 {
 
     // Si AÚN no hay 'from', por defecto asume 'home'
     if (!from) from = 'home';
+
+
+    //  TTS solo si vienes desde GPS 
+    const enableTTS = (from === 'gps');
+    const ttsBtn = document.getElementById('btn-tts');
+
+    if (!enableTTS) {
+    // Si no vienes de GPS, lo quitamos 
+    ttsBtn?.remove();
+    } else {
+    // Inicializa lectura opcional del contenido
+    window.initParadaTTS?.({
+        buttonSelector: "#btn-tts",
+        contentSelector: "#contenido-parada",
+        lang: "es-ES",
+        rate: 1
+    });
+    }
+
+
 
     // Guarda en sessionStorage SOLO si vino en la URL (para navegación interna dentro de la misma parada)
     if (params.has('from')) {
