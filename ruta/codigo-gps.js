@@ -136,10 +136,10 @@ function abrirEscaner(slug, idx) {
 // Obtener ubicación
 if (navigator.geolocation) {
     navigator.geolocation.watchPosition(pos => {
-        // const lat = pos.coords.latitude;
-        // const lng = pos.coords.longitude;
-        const lat = 40.409;   // Simulación fija (tu caso de prueba)
-        const lng = -3.6901;
+        const lat = pos.coords.latitude;
+        const lng = pos.coords.longitude;
+        //const lat = 40.409;   // Simulación fija (tu caso de prueba)
+        //const lng = -3.6901;
         userCoords = [lng, lat]; // ORS usa [lng, lat] (GeoJSON)
 
         //  centrar solo una vez
